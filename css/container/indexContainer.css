@@ -239,7 +239,7 @@ h2{
   cursor: pointer;
 }
 .hashtag .hashtag-box .hashtag-btn span.left-hashtag-arrow{
-  scale: -1;
+  transform: scaleX(-1);
 }
 /* section3 - product list */
 .sec3-list{
@@ -320,7 +320,7 @@ h2{
   cursor: pointer;
 }
 .scroll .scroll-btn span.left-arrow{
-  scale: -1;
+  transform: scaleX(-1);
 }
 .mobile-more{
   display: none;
@@ -449,7 +449,7 @@ h2{
 .sec5-slider .slider-frame ul li a{
   display: block;
   width: 100%;
-  height: auuto;
+  height: auto;
 }
 .sec5-slider .slider-frame ul li a .best-thum{
   display: flex;
@@ -502,7 +502,7 @@ h2{
   background-size: 40% auto;
 }
 .sec5-slider .arrows span.left-arrow{
-  scale: -1;
+  transform: scaleX(-1);
 }
 /* section5 - scroll */
 #sec5 .scroll-bar{
