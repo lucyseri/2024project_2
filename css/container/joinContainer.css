@@ -1,0 +1,256 @@
+/* join containaer layout */
+#main{
+  padding: 5rem 0 8rem;
+}
+#main #sec1{
+  display: flex;
+  justify-content: center;
+}
+#main #sec1 .inner-con{
+  flex: 0 1 1200px;
+}
+
+/* title */
+.title{
+  padding: 0 0 3rem 0;
+}
+.title h2{
+  margin: 0 0 3rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--main-blackColor);
+}
+.title ul.steps{
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+.title ul.steps li{
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 2rem;
+}
+.title ul.steps li span{
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--main-blackColor);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: center;
+  color: #fff;
+}
+.title ul.steps li:not(.current-step) span{
+  background-color: #ccc;
+}
+.title ul.steps li.current-step{
+  position: relative;
+}
+.title ul.steps li.current-step::before{
+  content: "";
+  display: block;
+  width: 0.85rem;
+  height: 0.2rem;
+  position: absolute;
+  left: -2.425rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../../img/icons/dot.svg) no-repeat center / cover;
+}
+.title ul.steps li.current-step::after{
+  content: "";
+  display: block;
+  width: 0.85rem;
+  height: 0.2rem;
+  position: absolute;
+  right: -2.425rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../../img/icons/dot.svg) no-repeat center / cover;
+  opacity: 0.2;
+}
+
+/* join form layout*/
+.join-form fieldset{
+  border: none;
+}
+.join-form fieldset legend{
+  height: 0;
+  visibility: hidden;
+}
+.join-form fieldset ul{
+  padding: 2rem 0;
+}
+.join-form fieldset ul.form-top{
+  border-top: 2px solid var(--main-blackColor);
+  border-bottom: 1px solid var(--main-borderColor);
+}
+.join-form fieldset ul li{
+  display: flex;
+  margin-bottom: 20px;
+}
+.join-form fieldset ul li label{
+  flex: 0 1 160px;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+.join-form fieldset ul li label.required::after{
+  content: "*";
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--main-blueColor);
+}
+.join-form fieldset ul li .input-box{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.join-form fieldset ul li .input-box input, select{
+  display: block;
+  padding: 10px 5px;
+  border-radius: 6px;
+  border: 1px solid var(--main-borderColor);
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+.join-form fieldset ul li .input-box span.input-btn{
+  display: block;
+  padding: 10px 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--main-blueColor);
+  line-height: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--main-blueColor);
+  cursor: pointer;
+}
+/* top form */
+.join-form fieldset ul.form-top li:first-child .input-box input{
+  background-color: #F5F8FD;
+}
+.join-form fieldset ul.form-top li:not(:first-child) .input-box input{
+  flex: 0 1 478px;
+}
+.join-form fieldset ul.form-top li .input-box span.input-btn{
+  flex: 0 0 112px;
+}
+.join-form fieldset ul.form-top li .input-box p.double-check{
+  padding: 10px 5px;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+/* bottom form */
+.join-form fieldset ul.form-bottom{
+  border-bottom: 2px solid var(--main-blackColor);
+}
+.join-form fieldset ul.form-bottom li.width100 .input-box input{
+  flex: 0 1 478px;
+}
+.join-form fieldset ul.form-bottom li:nth-child(5) .input-box{
+  flex-wrap: wrap;
+}
+.join-form fieldset ul.form-bottom li.birth .input-box #member-birth-year{
+  flex: 0 1 200px;
+}
+.join-form fieldset ul.form-bottom li.birth .input-box input:not(#member-birth-year){
+  max-width: 120px;
+}
+.join-form fieldset ul.form-bottom li.phone .input-box input{
+  max-width: 120px;
+}
+.join-form fieldset ul.form-bottom li.email .input-box input, select{
+  flex: 0 1 200px;
+}
+.join-form fieldset ul.form-bottom li.email .input-box select{
+  padding: 10px 21px 10px 5px;
+  background: url(../../img/icons/select.svg) no-repeat 96% center / 16px;
+  -webkit-appearance:none; /* for chrome */
+  -moz-appearance:none; /*for firefox*/
+  appearance:none;
+}
+.join-form fieldset ul.form-bottom li.email .input-box select::-ms-expand{
+  appearance:none;
+}
+.join-form fieldset ul.form-bottom li.phone .input-box span.dash, span.email-at{
+  font-size: 0.8rem;
+  line-height: 40px;
+}
+.join-form fieldset ul.form-bottom li .input-box span.input-btn{
+  flex: 0 0 134px;
+}
+.join-form fieldset button{
+  display: block;
+  width: 10rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  border: none;
+  background-color: var(--main-blackColor);
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 3rem auto 0;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  /* tablet form layout */
+  #main{
+    padding: 5rem 20px;
+  }
+  .join-form fieldset ul li{
+    flex-wrap: wrap;
+  }
+  .join-form fieldset ul li label{
+    flex: 0 1 100%;
+  }
+  /* tablet top form */
+  .join-form fieldset ul.form-top li:first-child .input-box input{
+    flex: 0 1 100%;
+  }
+  .join-form fieldset ul.form-top li:not(:first-child) .input-box input{
+    flex: 0 1 100%;
+  }
+  .join-form fieldset ul.form-top li:last-child .input-box{
+    flex-wrap: wrap;
+  }
+  .join-form fieldset ul.form-top li .input-box p.double-check{
+    flex: 0 0 100%;
+  }
+  /* tablet bottom form */
+  .join-form fieldset ul.form-bottom li.email .input-box{
+    flex-wrap: wrap;
+  }
+  .join-form fieldset ul.form-bottom li:nth-child(1) .input-box input{
+    flex: 0 1 100%;
+  }
+  .join-form fieldset ul.form-bottom li.birth .input-box #member-birth-year{
+    flex: 0 1 50%;
+  }
+  .join-form fieldset ul.form-bottom li.birth .input-box input:not(#member-birth-year){
+    max-width: 25%;
+  }
+  .join-form fieldset ul.form-bottom li.phone .input-box input{
+    max-width: 33.3333%;
+    flex: 1;
+  }
+  .join-form fieldset ul.form-bottom li.email .input-box #member-email-id{
+    flex: 1 1 auto;
+  }
+  .join-form fieldset ul.form-bottom li.email .input-box #member-email-self{
+    flex: 0 1 100%;
+  }
+  .join-form fieldset ul.form-bottom li:nth-child(5) .input-box #member-address-front{
+    flex: 1 1 auto;
+  }
+  .join-form fieldset ul.form-bottom li:nth-child(5) .input-box #member-address-back{
+    flex: 0 1 100%;
+  }
+}

@@ -1,0 +1,271 @@
+/* login layout */
+main{
+  padding: 0 0 6rem;
+}
+main section{
+  display: flex;
+  justify-content: center;
+}
+main section .inner-con{
+  flex: 0 1 1200px;
+  display: flex;
+}
+
+/* section1 layout*/
+#sec1 .inner-con{
+  padding: 5rem 0 3rem;
+  border-bottom: 2px solid var(--main-blackColor);
+}
+
+/* section1 - login form */
+.login{
+  flex: 0 1 50%;
+  padding-right: 4rem;
+  border-right: 1px solid var(--main-borderColor);
+}
+.login h2{
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.login form fieldset{
+  border: none;
+}
+.login form fieldset legend{
+  height: 0;
+  visibility: hidden;
+}
+.login form fieldset label{
+  display: block;
+  margin: 0 0 0.8rem 0;
+  font-size: 0.8rem;
+}
+.login form fieldset input{
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--main-borderColor);
+  font-size: 0.8rem;
+  line-height: 40px;
+}
+.login form fieldset .login-pw-box{
+  margin: 1.5rem 0 1rem;
+}
+.login form fieldset .select-box{
+  display: flex;
+}
+.login form fieldset .select-box label{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.login form fieldset .select-box label input{
+  display: none;
+}
+.login form fieldset .select-box label  span.circle{
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #666;
+}
+.login form fieldset .select-box label input:checked+span.circle{
+  background: url(../../img/icons/check.svg) no-repeat center;
+}
+.login form fieldset .select-box label span.login-keep-txt{
+  margin: 0 5px;
+  font-size: 0.8rem;
+}
+.login form fieldset .select-box a{
+  padding-right: 20px;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: #333;
+}
+.login form fieldset .select-box a.find-id{
+  position: relative;
+}
+.login form fieldset .select-box a.find-id::after{
+  content: "";
+  display: block;
+  width: 1px;
+  height: 14px;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  background-color: #1a1a1a;
+}
+.login form fieldset .btn-box{
+  display: flex;
+  justify-content: right;
+}
+.login form fieldset .btn-box button{
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--main-blueColor);
+  font-size: 0.8rem;
+  line-height: 4.5rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* section1 - join */
+.join{
+  flex: 0 1 50%;
+  position: relative;
+  padding: 0 0 0 4rem;
+}
+.join h2{
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.join p{
+  font-size: 16px;
+  margin: 1rem 0 2rem;
+}
+.join .join-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.join .join-box img{
+  display: block;
+  flex: 0 1 280px;
+  height: auto;
+}
+.join .join-box a{
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--main-blueColor);
+  line-height: 4.5rem;
+  text-align: center;
+  color: var(--main-blueColor);
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.join .join-box a:hover{
+  color: #fff;
+  background-color: var(--main-blueColor);
+}
+
+/* section2 */
+#sec2 .inner-con{
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+}
+#sec2 h2{
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+#sec2 ul{
+  display: flex;
+  gap: 10px;
+  flex: 0 1 760px;
+  padding: 40px 0;
+}
+#sec2 ul li{
+  flex: 1;
+  border-radius: 1.3rem;
+  border: 1px solid var(--main-borderColor);
+}
+#sec2 ul li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 54px 0 42px;
+  font-size: 0.9rem;
+  line-height: 50px;
+  text-align: center;
+}
+#sec2 ul li a .login-icon{
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+#sec2 ul li:nth-child(1) a .login-icon{
+  background: url(../../img/icons/icon-kakao.svg) no-repeat center / cover;
+}
+#sec2 ul li:nth-child(2) a .login-icon{
+  background: url(../../img/icons/icon-naver.svg) no-repeat center / cover;
+}
+#sec2 ul li:nth-child(3) a .login-icon{
+  background: url(../../img/icons/icon-google.svg) no-repeat center / cover;
+}
+
+@media only screen and (max-width: 768px) {
+  /* tablet layout */
+  main{
+    padding: 0 30px 6rem;
+  }
+  #sec1 .inner-con{
+    flex-wrap: wrap;
+  }
+  /* tablet section1 - login */
+  .login{
+    flex: 0 1 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--main-borderColor);
+    padding-right: 0;
+    padding-bottom: 3rem;
+  }
+  .login form fieldset .btn-box button{
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 1.3rem;
+    line-height: 2.75rem;
+  }
+  
+  /* tablet section1 - join */
+  .join{
+    flex: 0 1 100%;
+    padding: 3rem 0 4.75rem 0;
+  }
+  .join .join-box{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .join .join-box img{
+    display: block;
+    flex: 0 1 280px;
+    height: auto;
+  }
+  .join .join-box a{
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 1.3rem;
+    line-height: 2.75rem;
+    margin-top: 2rem;
+  }
+  #sec2{
+    padding: 32px 20px;
+  }
+  #sec2 .inner-con{
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  #sec2 h2{
+    flex: 0 1 100%;
+    text-align: center;
+  }
+  #sec2 ul{
+    flex: 0 1 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  #sec2 ul li{
+    flex: 0 1 60%;
+  }
+}
