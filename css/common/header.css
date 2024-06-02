@@ -40,7 +40,6 @@ header .top-header .inner-top-header{
 header nav{
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid var(--main-borderColor);
 }
 header nav .inner-nav{
   flex: 0 1 1500px;
@@ -176,22 +175,20 @@ nav .inner-nav .gnb ul li a{
   font-weight: 700;
   line-height: 60px;
 }
-nav .inner-nav button{
+nav .inner-nav .menu-btn{
   display: flex;
   justify-content: right;
   align-items: center;
   flex: 0 0 185px;
   height: 60px;
-  background: none;
-  border: none;
 }
-nav .inner-nav button .menu-icon{
+nav .inner-nav .menu-btn .menu-icon{
   width: 24px;
   height: 22px;
   position: relative;
   cursor: pointer;
 }
-nav .inner-nav button .menu-icon span.menu-bar{
+nav .inner-nav .menu-btn .menu-icon span.menu-bar{
   display: block;
   width: 24px;
   height: 2px;
@@ -204,14 +201,14 @@ nav .inner-nav button .menu-icon span.menu-bar{
   color: transparent;
   transition: all 0.3s ease-in-out;
 }
-nav .inner-nav button .menu-icon span.top{
+nav .inner-nav .menu-btn .menu-icon span.top{
   top: 0;
 }
-nav .inner-nav button .menu-icon span.middle{
+nav .inner-nav .menu-btn .menu-icon span.middle{
   top: 50%;
   transform: translateY(-50%);
 }
-nav .inner-nav button .menu-icon span.bottom{
+nav .inner-nav .menu-btn .menu-icon span.bottom{
   bottom: 0;
 }
 .middlebar_off{
@@ -222,7 +219,11 @@ nav .inner-nav button .menu-icon span.bottom{
 .slide-nav{
   display: none;
   justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 119px;
   width: 100%;
+  border: 1px solid var(--main-borderColor);
   background-color: #fff;
 }
 .slide-nav ul.depth1_ul{
@@ -307,6 +308,9 @@ nav .inner-nav button .menu-icon span.bottom{
     display: none;
   }
   /* tablet gnb */
+  .slide-nav{
+    top: 58px;
+  }
   .slide-nav ul.depth1_ul{
     display: block;
   }

@@ -29,6 +29,9 @@ h2{
   /* height: 480px; */
   position: relative;
 }
+#sec1 .sec-con h2{
+  display: none;
+}
 /* section1: main banner  - img slider*/
 #sec1 .sec-con .banner-img{
   width: 712.5%;
@@ -149,6 +152,9 @@ h2{
 /* section2 */
 #sec2{
   margin: 1.5rem 0 3.5rem;
+}
+#sec2 .inner-con h2{
+  display: none;
 }
 #sec2 .inner-con ul{
   display: flex;
@@ -334,6 +340,9 @@ h2{
 /* section4 */
 #sec4{
   padding-top: 7.5rem;
+}
+#sec4 .inner-con h2{
+  display: none;
 }
 #sec4 .inner-con a{
   display: block;
@@ -610,6 +619,11 @@ h2{
   display: block;
   margin: 0.6rem 0 1.3rem;
   font-weight: 700;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 #sec7 .inner-con ul li a img{
   display: block;
