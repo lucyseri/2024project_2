@@ -1,0 +1,23 @@
+@import url(../common/reset.css);
+@import url(../common/header.css);
+@import url(../common/footer.css);
+@import url(../container/sub1Container.css);
+
+#nav .inner-nav .gnb ul li{
+  position: relative
+}
+#nav .inner-nav .gnb ul li:nth-child(3):after{
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--main-blueColor);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#nav .inner-nav .gnb ul li:nth-child(3) a{
+  color: var(--main-blueColor);
+}
