@@ -99,6 +99,7 @@
   font-size: 0.8rem;
   line-height: 1rem;
   text-align: center;
+  cursor: pointer;
 }
 .filter-box #filter-form .filter_depth1_ul .filter_depth1_li .filter_depth2_ul .filter_depth2_li label input:checked+span{
   background-color: var(--main-blueColor);

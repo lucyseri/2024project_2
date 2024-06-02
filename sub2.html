@@ -6,16 +6,21 @@
     <title>메가스터디북스</title>
     <script src="js/js_header_footer.js" defer></script>
     <script src="js/js_sub_filter.js" defer></script>
-    <link rel="stylesheet" href="css/pages/sub1.css">
+    <link rel="stylesheet" href="css/pages/sub2.css">
   </head>
 <body>
+  <!-- skip menu : start -->
   <div id="skip">
     <a href="#nav">전체 메뉴 바로가기</a>
-    <a href="#sec2">검색 필터</a>
-    <a href="#sec3">초등 도서</a>
+    <a href="#sec2">상품 검색 필터 바로가기</a>
+    <a href="#sec3">전체 상품 바로가기</a>
   </div>
+  <!-- skip menu : end -->
+  <!-- wrap : start -->
   <div id="wrap">
+    <!-- header : start -->
     <header id="header">
+      <!-- top-header(search, login-icon, mobile logo) : start-->
       <div class="top-header">
         <div class="inner-top-header">
           <h2 class="logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
@@ -30,7 +35,7 @@
             </form>
             <ul class="icons_ul">
               <li class="mobile-icon"><a href="#"><span class="ir_pm">검색</span></a></li>
-              <li class="web-icon"><a href="#"><span class="ir_pm">로그인</span></a></li>
+              <li class="web-icon"><a href="login.html"><span class="ir_pm">로그인</span></a></li>
               <li class="mobile-icon mobile-menu">
                 <a href="#">
                   <div class="menu-icon">
@@ -44,15 +49,17 @@
           </div>
         </div>
       </div>
+      <!-- top-header(search, login-icon) : end-->
+      <!-- GNB, web logo, web menu icon : start -->
       <nav id="nav">
         <div class="inner-nav">
           <h1><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h1>
           <div class="gnb">
             <ul>
-              <li><a href="#">초등</a></li>
-              <li><a href="#">중등</a></li>
-              <li><a href="#">고등</a></li>
-              <li><a href="#">단행본</a></li>
+              <li><a href="sub1.html">초등</a></li>
+              <li><a href="sub2.html">중등</a></li>
+              <li><a href="sub3.html">고등</a></li>
+              <li><a href="sub4.html">단행본</a></li>
             </ul>
           </div>
           <button>
@@ -64,46 +71,52 @@
           </button>
         </div>
       </nav>
+      <!-- GNB, web logo, web menu icon : end -->
+      <!-- slide down LNB : start -->
       <div class="slide-nav">
         <ul class="depth1_ul">
           <li class="depth1_li">
-            <a href="#">도서</a>
+            <a href="sub1.html">도서</a>
             <ul class="depth2_ul">
-              <li class="depth2_li"><a href="#">초등</a></li>
-              <li class="depth2_li"><a href="#">중등</a></li>
-              <li class="depth2_li"><a href="#">고등</a></li>
-              <li class="depth2_li"><a href="#">단행본</a></li>
+              <li class="depth2_li"><a href="sub1.html">초등</a></li>
+              <li class="depth2_li"><a href="sub2.html">중등</a></li>
+              <li class="depth2_li"><a href="sub3.html">고등</a></li>
+              <li class="depth2_li"><a href="sub4.html">단행본</a></li>
             </ul>
           </li>
           <li class="depth1_li">
-            <a href="#">자료실</a>
+            <a href="update.html">자료실</a>
             <ul class="depth2_ul">
-              <li class="depth2_li"><a href="#">정답 및 해설</a></li>
-              <li class="depth2_li"><a href="#">정요표</a></li>
-              <li class="depth2_li"><a href="#">듣기자료</a></li>
-              <li class="depth2_li"><a href="#">교사용 자료</a></li>
-              <li class="depth2_li"><a href="#">부가자료</a></li>
+              <li class="depth2_li"><a href="update.html">정답 및 해설</a></li>
+              <li class="depth2_li"><a href="update.html">정요표</a></li>
+              <li class="depth2_li"><a href="update.html">듣기자료</a></li>
+              <li class="depth2_li"><a href="update.html">교사용 자료</a></li>
+              <li class="depth2_li"><a href="update.html">부가자료</a></li>
             </ul>
           </li>
           <li class="depth1_li">
-            <a href="#">이벤트</a>
+            <a href="update.html">이벤트</a>
           </li>
           <li class="depth1_li">
-            <a href="#">고객센터</a>
+            <a href="update.html">고객센터</a>
             <ul class="depth2_ul">
-              <li class="depth2_li"><a href="#">공지사항</a></li>
-              <li class="depth2_li"><a href="#">고객문의</a></li>
-              <li class="depth2_li"><a href="#">자주 묻는 질문</a></li>
-              <li class="depth2_li"><a href="#">오류신고</a></li>
-              <li class="depth2_li"><a href="#">총판안내</a></li>
-              <li class="depth2_li"><a href="#">제휴문의</a></li>
-              <li class="depth2_li"><a href="#">투고문의</a></li>
+              <li class="depth2_li"><a href="update.html">공지사항</a></li>
+              <li class="depth2_li"><a href="update.html">고객문의</a></li>
+              <li class="depth2_li"><a href="update.html">자주 묻는 질문</a></li>
+              <li class="depth2_li"><a href="update.html">오류신고</a></li>
+              <li class="depth2_li"><a href="update.html">총판안내</a></li>
+              <li class="depth2_li"><a href="update.html">제휴문의</a></li>
+              <li class="depth2_li"><a href="update.html">투고문의</a></li>
             </ul>
           </li>
         </ul>
       </div>
+      <!-- slide down LNB : end -->
     </header>
+    <!-- header : end -->
+    <!-- container: start -->
     <main id="main">
+      <!-- section1 - title : start -->
       <section id="sec1">
         <div class="inner-con">
           <div class="title">
@@ -119,6 +132,8 @@
           </div>
         </div>
       </section>
+      <!-- section1 - title : end -->
+      <!-- section2 - filter : start -->
       <section id="sec2">
         <div class="inner-con">
           <div class="filter-box">
@@ -135,13 +150,13 @@
                     </li>
                     <li class="filter_depth2_li">
                       <label for="category-elementary">
-                        <input type="radio" id="category-elementary" name="category" value="category-elementary" checked>
+                        <input type="radio" id="category-elementary" name="category" value="category-elementary">
                         <span>초등</span>
                       </label>
                     </li>
                     <li class="filter_depth2_li">
                       <label for="category-middle">
-                        <input type="radio" id="category-middle" name="category" value="category-middle">
+                        <input type="radio" id="category-middle" name="category" value="category-middle" checked>
                         <span>중등</span>
                       </label>
                     </li>
@@ -312,6 +327,8 @@
           </div>
         </div>
       </section>
+      <!-- section2 - filter : end -->
+      <!-- section3 - product list : start -->
       <section id="sec3">
         <div class="inner-con">
           <div class="list-top">
@@ -326,7 +343,7 @@
           <div class="product-list">
             <ul>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -340,7 +357,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -354,7 +371,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -368,7 +385,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -382,7 +399,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -396,7 +413,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -410,7 +427,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -424,7 +441,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="update.html">
                   <div class="product-thum">
                     <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
                   </div>
@@ -449,42 +466,48 @@
           </div>
         </div>
       </section>
+      <!-- section3 - product list : end -->
     </main>
+    <!-- container: end -->
+    <!-- footer : start -->
     <footer id="footer">
+      <!-- top-footer(policies, family site, sns) : start -->
       <div class="top-footer">
         <div class="inner-footer">
           <ul class="fnb_ul">
-            <li class="fnb_li"><a href="#">회사소개</a></li>
-            <li class="fnb_li"><a href="#">이용약관</a></li>
-            <li class="fnb_li"><a href="#">개인정보처리방침</a></li>
-            <li class="fnb_li"><a href="#">고객센터</a></li>
-            <li class="fnb_li"><a href="#">제휴문의</a></li>
-            <li class="fnb_li"><a href="#">투고문의</a></li>
-            <li class="fnb_li"><a href="#">사이트맵</a></li>
+            <li class="fnb_li"><a href="update.html">회사소개</a></li>
+            <li class="fnb_li"><a href="update.html">이용약관</a></li>
+            <li class="fnb_li"><a href="update.html">개인정보처리방침</a></li>
+            <li class="fnb_li"><a href="update.html">고객센터</a></li>
+            <li class="fnb_li"><a href="update.html">제휴문의</a></li>
+            <li class="fnb_li"><a href="update.html">투고문의</a></li>
+            <li class="fnb_li"><a href="update.html">사이트맵</a></li>
           </ul>
           <div class="right-con">
             <div class="community-icons">
               <ul>
-                <li><a href="#"><span class="ir_pm">메가스터디북스 인스타그램</span></a></li>
-                <li><a href="#"><span class="ir_pm">메가스터디북스 유튜브</span></a></li>
-                <li><a href="#"><span class="ir_pm">메가맘 블로그</span></a></li>
+                <li><a href="https://www.youtube.com/@megastudybooks" target="_blank"><span class="ir_pm">메가스터디북스 인스타그램</span></a></li>
+                <li><a href="https://www.youtube.com/@megastudybooks" target="_blank"><span class="ir_pm">메가스터디북스 유튜브</span></a></li>
+                <li><a href="https://cafe.naver.com/megasupporter" target="_blank"><span class="ir_pm">메가맘 블로그</span></a></li>
               </ul>
             </div>
             <div class="family-site">
               <button>Family Site</button>
               <ul class="slide-down">
-                <li><a href="#">매가MD</a></li>
-                <li><a href="#">메가로스쿨</a></li>
-                <li><a href="#">메가로이어스</a></li>
-                <li><a href="#">메가랜드</a></li>
-                <li><a href="#">메가변리사</a></li>
-                <li><a href="#">메가원격평생교육원</a></li>
-                <li><a href="#">메가미래평생교육원</a></li>
+                <li><a href="https://www.megamd.co.kr/megamd.asp" target="_blank">매가MD</a></li>
+                <li><a href="https://www.megals.co.kr/megals.asp" target="_blank">메가로스쿨</a></li>
+                <li><a href="https://www.megalawyers.co.kr/megalawyers.asp" target="_blank">메가로이어스</a></li>
+                <li><a href="https://www.megaland.co.kr/dom_main.asp" target="_blank">메가랜드</a></li>
+                <li><a href="https://www.megaexpert.co.kr/megaexpert.asp" target="_blank">메가변리사</a></li>
+                <li><a href="https://www.caedu.co.kr/" target="_blank">메가원격평생교육원</a></li>
+                <li><a href="https://www.bbedu.co.kr/" target="_blank">메가미래평생교육원</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <!-- top-footer(policies, family site, sns) : end -->
+      <!-- bottom-footer(address) : start -->
       <div class="bottom-footer">
         <div class="inner-footer">
           <div class="footer-logo">
@@ -507,7 +530,10 @@
           </div>
         </div>
       </div>
+      <!-- bottom-footer(address) : end -->
     </footer>
+    <!-- footer : end -->
   </div>
+  <!-- wrap : end -->
 </body>
 </html>
