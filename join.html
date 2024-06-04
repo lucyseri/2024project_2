@@ -134,15 +134,15 @@
             <ul class="steps">
               <li>
                 <span>1</span>
-                약관 동의 및 본인인증
+                <p>약관 동의 및 본인인증</p>
               </li>
               <li class="current-step">
                 <span>2</span>
-                정보입력
+                <p class="mobile">정보입력</p>
               </li>
               <li>
                 <span>3</span>
-                회원가입 완료
+                <p>회원가입 완료</p>
               </li>
             </ul>
           </div>
@@ -178,7 +178,7 @@
                 </li>
               </ul>
               <ul class="form-bottom">
-                <li class="width100">
+                <li class="name">
                   <label for="member-name" class="required">이름</label>
                   <div class="input-box">
                     <input type="text" id="member-name" required>
@@ -186,44 +186,46 @@
                 </li>
                 <li class="birth">
                   <label for="member-birth" class="required">생년월일</label>
-                  <div class="input-box">
-                    <input type="text" id="member-birth-year" title="member-birth-year" required>
-                    <input type="text" id="member-birth-month" title="member-birth-month" required>
-                    <input type="text" id="member-birth-date" title="member-birth-date" required>
-                  </div>
+                  <ul class="input-box">
+                    <li><input type="text" id="member-birth-year" title="member-birth-year" required></li>
+                    <li><input type="text" id="member-birth-month" title="member-birth-month" required></li>
+                    <li><input type="text" id="member-birth-date" title="member-birth-date" required></li>
+                  </ul>
                 </li>
                 <li class="phone">
                   <label for="member-phone" class="required">휴대폰 번호</label>
-                  <div class="input-box">
-                    <input type="text" id="member-phone-front" title="member-phone-front" required>
+                  <ul class="input-box">
+                    <li><input type="text" id="member-phone-front" title="member-phone-front" required></li>
                     <span class="dash">-</span>
-                    <input type="text" id="member-phone-middle" title="member-phone-middle" required>
+                    <li><input type="text" id="member-phone-middle" title="member-phone-middle" required></li>
                     <span class="dash">-</span>
-                    <input type="text" id="member-phone-back" title="member-phone-back" required>
-                  </div>
+                    <li><input type="text" id="member-phone-back" title="member-phone-back" required></li>
+                  </ul>
                 </li>
                 <li class="email">
                   <label for="member-email">이메일</label>
-                  <div class="input-box">
-                    <input type="text" id="member-email-id" title="member-email-id">
+                  <ul class="input-box">
+                    <li class="email-id"><input type="text" id="member-email-id" title="member-email-id"></li>
                     <span class="email-at">&#64</span>
-                    <select name="member-email-domain" id="member-email-domain">
-                      <option value="직접선택" selected>직접선택</option>
-                      <option value="naver.com">naver.com</option>
-                      <option value="gmail.com">gmail.com</option>
-                      <option value="nate.com">nate.com</option>
-                      <option value="daum.net">daum.net</option>
-                    </select>
-                    <input type="text" id="member-email-self" title="member-email-self">
-                  </div>
+                    <li class="email-domain">
+                      <select name="member-email-domain" id="member-email-domain">
+                        <option value="직접선택" selected>직접선택</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="daum.net">daum.net</option>
+                      </select>
+                    </li>
+                    <li class="email-self"><input type="text" id="member-email-self" title="member-email-self"></li>
+                  </ul>
                 </li>
-                <li class="width100">
+                <li class="address">
                   <label for="member-address">주소</label>
-                  <div class="input-box">
-                    <input type="text" id="member-address-front" title="member-address-front">
+                  <ul class="input-box">
+                    <li><input type="text" id="member-address-front" title="member-address-front"></li>
                     <span class="input-btn">우편번호 찾기</span>
-                    <input type="text" id="member-address-back" title="member-address-back">
-                  </div>
+                    <li><input type="text" id="member-address-back" title="member-address-back"></li>
+                  </ul>
                 </li>
               </ul>
               <button id="submit-btn">회원가입</button>

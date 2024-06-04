@@ -1,6 +1,6 @@
 /* join containaer layout */
 #main{
-  padding: 5rem 0 8rem;
+  padding: 5rem 20px 8rem;
 }
 #main #sec1{
   display: flex;
@@ -30,8 +30,6 @@
 .title ul.steps li{
   display: flex;
   gap: 0.8rem;
-  font-size: 0.9rem;
-  line-height: 2rem;
 }
 .title ul.steps li span{
   display: block;
@@ -44,6 +42,11 @@
   line-height: 2rem;
   text-align: center;
   color: #fff;
+}
+.title ul.steps li p{
+  font-size: 0.9rem;
+  line-height: 2rem;
+  word-break: keep-all;
 }
 .title ul.steps li:not(.current-step) span{
   background-color: #ccc;
@@ -83,35 +86,36 @@
   height: 0;
   visibility: hidden;
 }
-.join-form fieldset ul{
+.join-form fieldset>ul{
   padding: 2rem 0;
 }
 .join-form fieldset ul.form-top{
   border-top: 2px solid var(--main-blackColor);
   border-bottom: 1px solid var(--main-borderColor);
 }
-.join-form fieldset ul li{
+.join-form fieldset>ul>li{
   display: flex;
   margin-bottom: 20px;
 }
-.join-form fieldset ul li label{
+.join-form fieldset>ul>li label{
   flex: 0 1 160px;
   padding: 10px 0;
   font-size: 0.8rem;
   line-height: 1rem;
 }
-.join-form fieldset ul li label.required::after{
+.join-form fieldset>ul>li label.required::after{
   content: "*";
   font-size: 1rem;
   font-weight: 700;
   color: var(--main-blueColor);
 }
-.join-form fieldset ul li .input-box{
+.join-form fieldset>ul>li .input-box{
+  flex: 0 1 1040px;
   display: flex;
   gap: 10px;
   width: 100%;
 }
-.join-form fieldset ul li .input-box input, select{
+.join-form fieldset>ul>li .input-box input, select{
   display: block;
   padding: 10px 5px;
   border-radius: 6px;
@@ -119,8 +123,9 @@
   font-size: 0.8rem;
   line-height: 1rem;
 }
-.join-form fieldset ul li .input-box span.input-btn{
+.join-form fieldset>ul>li .input-box span.input-btn{
   display: block;
+  flex: 0 0 auto;
   padding: 10px 1rem;
   border-radius: 6px;
   border: 1px solid var(--main-blueColor);
@@ -137,9 +142,6 @@
 .join-form fieldset ul.form-top li:not(:first-child) .input-box input{
   flex: 0 1 478px;
 }
-.join-form fieldset ul.form-top li .input-box span.input-btn{
-  flex: 0 0 112px;
-}
 .join-form fieldset ul.form-top li .input-box p.double-check{
   padding: 10px 5px;
   font-size: 0.8rem;
@@ -149,41 +151,49 @@
 .join-form fieldset ul.form-bottom{
   border-bottom: 2px solid var(--main-blackColor);
 }
-.join-form fieldset ul.form-bottom li.width100 .input-box input{
+.join-form fieldset ul.form-bottom>li ul.input-box li input, select{
+  width: 100%;
+}
+.join-form fieldset ul.form-bottom>li.name .input-box input{
   flex: 0 1 478px;
 }
-.join-form fieldset ul.form-bottom li:nth-child(5) .input-box{
-  flex-wrap: wrap;
-}
-.join-form fieldset ul.form-bottom li.birth .input-box #member-birth-year{
+.join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:nth-child(1){
   flex: 0 1 200px;
 }
-.join-form fieldset ul.form-bottom li.birth .input-box input:not(#member-birth-year){
-  max-width: 120px;
+.join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:not(:nth-child(1)){
+  flex: 0 1 120px;
 }
-.join-form fieldset ul.form-bottom li.phone .input-box input{
-  max-width: 120px;
+.join-form fieldset ul.form-bottom>li.phone .input-box li{
+  flex: 0 1 120px;
 }
-.join-form fieldset ul.form-bottom li.email .input-box input, select{
-  flex: 0 1 200px;
-}
-.join-form fieldset ul.form-bottom li.email .input-box select{
-  padding: 10px 21px 10px 5px;
-  background: url(../../img/icons/select.svg) no-repeat 96% center / 16px;
-  -webkit-appearance:none; /* for chrome */
-  -moz-appearance:none; /*for firefox*/
-  appearance:none;
-}
-.join-form fieldset ul.form-bottom li.email .input-box select::-ms-expand{
-  appearance:none;
-}
-.join-form fieldset ul.form-bottom li.phone .input-box span.dash, span.email-at{
+.join-form fieldset ul.form-bottom>li.phone .input-box span.dash{
   font-size: 0.8rem;
   line-height: 40px;
 }
-.join-form fieldset ul.form-bottom li .input-box span.input-btn{
-  flex: 0 0 134px;
+.join-form fieldset ul.form-bottom>li.email .input-box li{
+  flex: 0 1 200px;
 }
+.join-form fieldset ul.form-bottom>li.email .input-box span.email-at{
+  font-size: 0.8rem;
+  line-height: 38px;
+}
+.join-form fieldset ul.form-bottom>li.email .input-box li select{
+  padding: 10px 21px 10px 5px;
+  background: url(../../img/icons/select.svg) no-repeat 96% center / 16px;
+  -webkit-appearance:none; 
+  -moz-appearance:none; 
+  appearance:none;
+}
+.join-form fieldset ul.form-bottom>li.email .input-box li select::-ms-expand{
+  appearance:none;
+}
+.join-form fieldset ul.form-bottom>li.address .input-box{
+  flex-wrap: wrap;
+}
+.join-form fieldset ul.form-bottom>li.address .input-box li{
+  flex: 0 1 478px;
+}
+
 .join-form fieldset button{
   display: block;
   width: 10rem;
@@ -205,10 +215,13 @@
   #main{
     padding: 5rem 20px;
   }
-  .join-form fieldset ul li{
+  .join-form fieldset>ul>li{
     flex-wrap: wrap;
   }
-  .join-form fieldset ul li label{
+  .join-form fieldset>ul>li label{
+    flex: 0 1 100%;
+  }
+  .join-form fieldset>ul>li .input-box{
     flex: 0 1 100%;
   }
   /* tablet top form */
@@ -222,35 +235,46 @@
     flex-wrap: wrap;
   }
   .join-form fieldset ul.form-top li .input-box p.double-check{
-    flex: 0 0 100%;
+    flex: 0 1 100%;
   }
   /* tablet bottom form */
-  .join-form fieldset ul.form-bottom li.email .input-box{
-    flex-wrap: wrap;
-  }
-  .join-form fieldset ul.form-bottom li:nth-child(1) .input-box input{
+  .join-form fieldset ul.form-bottom li.name .input-box input{
     flex: 0 1 100%;
   }
-  .join-form fieldset ul.form-bottom li.birth .input-box #member-birth-year{
+  .join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:nth-child(1){
     flex: 0 1 50%;
   }
-  .join-form fieldset ul.form-bottom li.birth .input-box input:not(#member-birth-year){
-    max-width: 25%;
+  .join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:not(:nth-child(1)){
+    flex: 0 1 25%;
   }
-  .join-form fieldset ul.form-bottom li.phone .input-box input{
-    max-width: 33.3333%;
-    flex: 1;
+  .join-form fieldset ul.form-bottom>li.phone .input-box li{
+    flex: 0 1 33.3333%;
   }
-  .join-form fieldset ul.form-bottom li.email .input-box #member-email-id{
+  .join-form fieldset ul.form-bottom>li.address .input-box li:nth-child(1){
     flex: 1 1 auto;
   }
-  .join-form fieldset ul.form-bottom li.email .input-box #member-email-self{
-    flex: 0 1 100%;
+  .join-form fieldset ul.form-bottom>li.address .input-box li:nth-child(3){
+    flex: 0 0 100%;
   }
-  .join-form fieldset ul.form-bottom li:nth-child(5) .input-box #member-address-front{
+  .join-form fieldset ul.form-bottom>li.email .input-box{
+    flex-wrap: wrap;
+  }
+  .join-form fieldset ul.form-bottom>li.email .input-box li.email-id{
     flex: 1 1 auto;
   }
-  .join-form fieldset ul.form-bottom li:nth-child(5) .input-box #member-address-back{
-    flex: 0 1 100%;
+  .join-form fieldset ul.form-bottom>li.email .input-box li.email-self{
+    flex: 0 0 100%;
+  }
+}
+
+@media only screen and (max-width:414px) {
+  #main #sec1 .inner-con{
+    flex: 0 1 394px;
+  }
+  .title ul.steps li p:not(.mobile){
+    display: none;
+  }
+  .join-form fieldset ul.form-bottom>li.email .input-box li.email-domain{
+    flex: 0 1 120px;
   }
 }
