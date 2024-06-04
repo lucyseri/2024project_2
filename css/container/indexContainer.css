@@ -121,6 +121,7 @@ h2{
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0 0.25rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 #sec1 .sec-con .slide-arrows .left-arrow{
   transform: scaleX(-1);
