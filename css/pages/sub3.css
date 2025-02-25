@@ -1,7 +1,7 @@
-@import url(../common/reset.css);
-@import url(../common/header.css);
-@import url(../common/footer.css);
-@import url(../container/sub1Container.css);
+@import url("../common/reset.css");
+@import url("../common/header.css");
+@import url("../common/footer.css");
+@import url("../container/sub1Container.css");
 
 /* header - nav */
 #nav .inner-nav .gnb ul li{
@@ -21,9 +21,4 @@
 }
 #nav .inner-nav .gnb ul li:nth-child(3) a{
   color: var(--main-blueColor);
-}
-/* container - section2: filter */
-.filter-box #filter-form .filter_depth1_ul .filter_depth1_li:first-child ul.category_ul li.category_li:nth-child(3) a{
-  background-color: var(--main-blueColor);
-  color: #fff;
 }

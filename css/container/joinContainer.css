@@ -9,7 +9,6 @@
 #main #sec1 .inner-con{
   flex: 0 1 1200px;
 }
-
 /* title */
 .title{
   padding: 0 0 3rem 0;
@@ -43,11 +42,6 @@
   text-align: center;
   color: #fff;
 }
-.title ul.steps li p{
-  font-size: 0.9rem;
-  line-height: 2rem;
-  word-break: keep-all;
-}
 .title ul.steps li:not(.current-step) span{
   background-color: #ccc;
 }
@@ -63,7 +57,7 @@
   left: -2.425rem;
   top: 50%;
   transform: translateY(-50%);
-  background: url(../../img/icons/dot.svg) no-repeat center / cover;
+  background: url("../../img/icons/dot.svg") no-repeat center / cover;
 }
 .title ul.steps li.current-step::after{
   content: "";
@@ -74,199 +68,210 @@
   right: -2.425rem;
   top: 50%;
   transform: translateY(-50%);
-  background: url(../../img/icons/dot.svg) no-repeat center / cover;
+  background: url("../../img/icons/dot.svg") no-repeat center / cover;
   opacity: 0.2;
 }
-
-/* join form layout*/
-.join-form fieldset{
+.title ul.steps li p{
+  font-size: 0.9rem;
+  line-height: 2rem;
+  word-break: keep-all;
+}
+/*form*/
+#sec1 form{
+  display: block;
+  width: 100%;
+}
+#sec1 form fieldset{
   border: none;
 }
-.join-form fieldset legend{
+#sec1 form fieldset legend{
+  font-size: 0;
   height: 0;
-  visibility: hidden;
+  line-height: 0;
 }
-.join-form fieldset>ul{
-  padding: 2rem 0;
+#sec1 form fieldset ul{
+  padding: 2.1rem 0;
 }
-.join-form fieldset ul.form-top{
-  border-top: 2px solid var(--main-blackColor);
-  border-bottom: 1px solid var(--main-borderColor);
-}
-.join-form fieldset>ul>li{
+#sec1 form fieldset ul li{
   display: flex;
-  margin-bottom: 20px;
 }
-.join-form fieldset>ul>li label{
+#sec1 form fieldset ul li:not(:last-child){
+  margin-bottom: 1rem;
+}
+#sec1 form fieldset ul li label{
   flex: 0 1 160px;
-  padding: 10px 0;
-  font-size: 0.8rem;
-  line-height: 1rem;
+  margin: 10px 0;
+  font-size: 0.8em;
+  line-height: 1em;
+  font-weight: 500;
+  letter-spacing: -1.6px;
 }
-.join-form fieldset>ul>li label.required::after{
+#sec1 form fieldset ul li.required label::after{
   content: "*";
-  font-size: 1rem;
+  font-size: 0.8em;
   font-weight: 700;
   color: var(--main-blueColor);
+  margin-left: 4px;
 }
-.join-form fieldset>ul>li .input-box{
-  flex: 0 1 1040px;
+#sec1 form fieldset ul li .input-box{
+  flex: 0 1 calc(100% - 160px);
+  flex-wrap: wrap;
   display: flex;
+  align-items: center;
   gap: 10px;
-  width: 100%;
 }
-.join-form fieldset>ul>li .input-box input, select{
-  display: block;
-  padding: 10px 5px;
-  border-radius: 6px;
+#sec1 form fieldset ul li .input-box input, 
+#sec1 form fieldset ul li .input-box select{
   border: 1px solid var(--main-borderColor);
+  padding: 10px;
+  border-radius: 0.3rem;
   font-size: 0.8rem;
   line-height: 1rem;
+  outline: none;
 }
-.join-form fieldset>ul>li .input-box span.input-btn{
-  display: block;
+#sec1 form fieldset ul li.web478 .input-box input{
+  flex: 0 1 478px;
+}
+#sec1 form fieldset ul li .input-box a.input-btn{
   flex: 0 0 auto;
   padding: 10px 1rem;
-  border-radius: 6px;
   border: 1px solid var(--main-blueColor);
-  line-height: 1rem;
+  border-radius: 0.3rem;
   font-size: 0.8rem;
-  text-align: center;
+  line-height: 1rem;
   color: var(--main-blueColor);
-  cursor: pointer;
 }
-/* top form */
-.join-form fieldset ul.form-top li:first-child .input-box input{
-  background-color: #F5F8FD;
-}
-.join-form fieldset ul.form-top li:not(:first-child) .input-box input{
-  flex: 0 1 478px;
-}
-.join-form fieldset ul.form-top li .input-box p.double-check{
-  padding: 10px 5px;
+#sec1 form fieldset ul li .input-box span.dash,
+#sec1 form fieldset ul li .input-box span.at{
   font-size: 0.8rem;
   line-height: 1rem;
 }
-/* bottom form */
-.join-form fieldset ul.form-bottom{
-  border-bottom: 2px solid var(--main-blackColor);
-}
-.join-form fieldset ul.form-bottom>li ul.input-box li input, select{
-  width: 100%;
-}
-.join-form fieldset ul.form-bottom>li.name .input-box input{
-  flex: 0 1 478px;
-}
-.join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:nth-child(1){
-  flex: 0 1 200px;
-}
-.join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:not(:nth-child(1)){
-  flex: 0 1 120px;
-}
-.join-form fieldset ul.form-bottom>li.phone .input-box li{
-  flex: 0 1 120px;
-}
-.join-form fieldset ul.form-bottom>li.phone .input-box span.dash{
-  font-size: 0.8rem;
-  line-height: 40px;
-}
-.join-form fieldset ul.form-bottom>li.email .input-box li{
-  flex: 0 1 200px;
-}
-.join-form fieldset ul.form-bottom>li.email .input-box span.email-at{
-  font-size: 0.8rem;
-  line-height: 38px;
-}
-.join-form fieldset ul.form-bottom>li.email .input-box li select{
-  padding: 10px 21px 10px 5px;
-  background: url(../../img/icons/select.svg) no-repeat 96% center / 16px;
-  -webkit-appearance:none; 
-  -moz-appearance:none; 
-  appearance:none;
-}
-.join-form fieldset ul.form-bottom>li.email .input-box li select::-ms-expand{
-  appearance:none;
-}
-.join-form fieldset ul.form-bottom>li.address .input-box{
-  flex-wrap: wrap;
-}
-.join-form fieldset ul.form-bottom>li.address .input-box li{
-  flex: 0 1 478px;
-}
-
-.join-form fieldset button{
+#sec1 form button{
   display: block;
   width: 10rem;
   height: 2.6rem;
   line-height: 2.6rem;
+  border-radius: 2.5rem;
   border: none;
+  outline: none;
   background-color: var(--main-blackColor);
   color: #fff;
   text-align: center;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 500;
   margin: 3rem auto 0;
-  border-radius: 2.5rem;
   cursor: pointer;
+  letter-spacing: -1.8px;
+}
+/*account info*/
+#sec1 form fieldset.account-info ul{
+  border-top: 2px solid var(--main-blackColor);
+  border-bottom: 1px solid var(--main-borderColor);
+}
+#sec1 form fieldset.account-info ul li.group .input-box input{
+  flex: 0 1 198px;
+  background-color: #F5F8FD;
+}
+#sec1 form fieldset.account-info ul li .input-box p.double-check{
+  font-size: 0.7em;
+}
+/*user info*/
+#sec1 form fieldset.user-info ul{
+  border-bottom: 2px solid var(--main-blackColor);
+}
+#sec1 form fieldset.user-info ul li .input-box input[type = 'number']{
+  -moz-appearance: textfield;
+}
+#sec1 form fieldset.user-info ul li .input-box input[type = 'number']::-webkit-inner-spin-button,
+#sec1 form fieldset.user-info ul li .input-box input[type = 'number']::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+#sec1 form fieldset.user-info ul li.birth .input-box #user-birth-year{
+  flex: 0 1 198px;
+}
+#sec1 form fieldset.user-info ul li.birth .input-box #user-birth-month,
+#sec1 form fieldset.user-info ul li.birth .input-box #user-birth-day{
+  flex: 0 1 118px;
+}
+#sec1 form fieldset.user-info ul li.phone .input-box input{
+  max-width: 120px;
+}
+#sec1 form fieldset.user-info ul li.email .input-box input{
+  flex: 0 1 198px;
+}
+#sec1 form fieldset.user-info ul li .input-box select{
+  flex: 0 1 198px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../../img/icons/select.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+#sec1 form fieldset.user-info ul li .input-box select::-ms-expand{
+  appearance: none;
 }
 
+/*responsible - tablet: 768*/
 @media only screen and (max-width: 768px) {
-  /* tablet form layout */
   #main{
     padding: 5rem 20px;
   }
-  .join-form fieldset>ul>li{
-    flex-wrap: wrap;
+  #sec1 form fieldset ul li{
+    flex-direction: column;
   }
-  .join-form fieldset>ul>li label{
+  #sec1 form fieldset ul li label{
     flex: 0 1 100%;
   }
-  .join-form fieldset>ul>li .input-box{
+  #sec1 form fieldset ul li .input-box{
     flex: 0 1 100%;
   }
-  /* tablet top form */
-  .join-form fieldset ul.form-top li:first-child .input-box input{
+  #sec1 form fieldset ul li.tablet100 .input-box input{
+    flex: 0 1 100% !important;
+  }
+  /*account info*/
+  #sec1 form fieldset.account-info ul li.account-id .input-box input{
+    flex: 0 1 calc(100% - 80.35px - 10px);
+  }
+  /*user info*/
+  #sec1 form fieldset.user-info ul li.birth .input-box #user-birth-year{
+    flex: 0 1 298px;
+  }
+  #sec1 form fieldset.user-info ul li.birth .input-box #user-birth-month,
+  #sec1 form fieldset.user-info ul li.birth .input-box #user-birth-day{
+    flex: 0 1 calc((100% - 298px - 20px) / 2);
+  }
+  #sec1 form fieldset.user-info ul li.phone .input-box input{
+    max-width: calc((100% - 40px - 9px) / 3);
+    flex: 0 1 calc((100% - 40px - 9px) / 3);
+  }
+  #sec1 form fieldset.user-info ul li.email .input-box #user-email-id{
+    flex: 0 1 calc(100% - 276px - 20px - 12.2px);
+  }
+  #sec1 form fieldset.user-info ul li.email .input-box #user-email-self{
     flex: 0 1 100%;
   }
-  .join-form fieldset ul.form-top li:not(:first-child) .input-box input{
+  #sec1 form fieldset.user-info ul li .input-box select{
+    flex: 0 1 276px;
+    appearance: none;
+    background: url("../../img/icons/select.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+  }
+  #sec1 form fieldset.user-info ul li .input-box select:focus{
+    background: url("../../img/icons/select-open.svg");
+  }
+  #sec1 form fieldset.user-info ul li.address .input-box #user-address-front{
+    flex: 0 1 calc(100% - 107.5px - 10px);
+  }
+  #sec1 form fieldset.user-info ul li.address .input-box #user-address-back{
     flex: 0 1 100%;
-  }
-  .join-form fieldset ul.form-top li:last-child .input-box{
-    flex-wrap: wrap;
-  }
-  .join-form fieldset ul.form-top li .input-box p.double-check{
-    flex: 0 1 100%;
-  }
-  /* tablet bottom form */
-  .join-form fieldset ul.form-bottom li.name .input-box input{
-    flex: 0 1 100%;
-  }
-  .join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:nth-child(1){
-    flex: 0 1 50%;
-  }
-  .join-form fieldset ul.form-bottom>li:nth-child(2) .input-box li:not(:nth-child(1)){
-    flex: 0 1 25%;
-  }
-  .join-form fieldset ul.form-bottom>li.phone .input-box li{
-    flex: 0 1 33.3333%;
-  }
-  .join-form fieldset ul.form-bottom>li.address .input-box li:nth-child(1){
-    flex: 1 1 auto;
-  }
-  .join-form fieldset ul.form-bottom>li.address .input-box li:nth-child(3){
-    flex: 0 0 100%;
-  }
-  .join-form fieldset ul.form-bottom>li.email .input-box{
-    flex-wrap: wrap;
-  }
-  .join-form fieldset ul.form-bottom>li.email .input-box li.email-id{
-    flex: 1 1 auto;
-  }
-  .join-form fieldset ul.form-bottom>li.email .input-box li.email-self{
-    flex: 0 0 100%;
   }
 }
-
+/*responsible - mobile: 414*/
 @media only screen and (max-width:414px) {
   #main #sec1 .inner-con{
     flex: 0 1 394px;
@@ -274,7 +279,52 @@
   .title ul.steps li p:not(.mobile){
     display: none;
   }
-  .join-form fieldset ul.form-bottom>li.email .input-box li.email-domain{
-    flex: 0 1 120px;
+  #sec1 form fieldset ul li{
+    font-size: 16px;
+  }
+  #sec1 form fieldset ul li .input-box input, 
+  #sec1 form fieldset ul li .input-box select{
+    font-size: 1em;
+    line-height: 1.25em;
+  }
+  #sec1 form fieldset ul li .input-box a.input-btn{
+    font-size: 1em;
+    line-height: 1.25em;
+  }
+  #sec1 form fieldset ul li .input-box span.dash,
+  #sec1 form fieldset ul li .input-box span.at{
+    font-size: 1em;
+    line-height: 1.25em;
+  }
+  #sec1 form button{
+    height: 2.85rem;
+    line-height: 2.85rem;
+    font-size: 1rem;
+    letter-spacing: -0.1rem;
+  }
+  /*account info*/
+  #sec1 form fieldset.account-info ul li.account-id .input-box input{
+    flex: 0 1 calc(100% - 88.88px - 10px);
+  }
+  /*user info*/
+  #sec1 form fieldset.user-info ul li.birth .input-box #user-birth-year{
+    flex: 0 1 150px;
+  }
+  #sec1 form fieldset.user-info ul li.birth .input-box #user-birth-month,
+  #sec1 form fieldset.user-info ul li.birth .input-box #user-birth-day{
+    flex: 0 1 calc((100% - 150px - 20px) / 2);
+  }
+  #sec1 form fieldset.user-info ul li.phone .input-box input{
+    max-width: calc((100% - 40px - 11.2px) / 3);
+    flex: 0 1 calc((100% - 40px - 11.2px) / 3);
+  }
+  #sec1 form fieldset.user-info ul li.email .input-box #user-email-id{
+    flex: 0 1 calc(100% - 132px - 20px - 15.14px);
+  }
+  #sec1 form fieldset.user-info ul li .input-box select{
+    flex: 0 1 132px;
+  }
+  #sec1 form fieldset.user-info ul li.address .input-box #user-address-front{
+    flex: 0 1 calc(100% - 122.81px - 10px);
   }
 }

@@ -1,52 +1,121 @@
 "use strict";
-// filter - more btn
-const filterMoreUl = document.querySelector('.filter-more-btn');
-const filterMoreUlLi = document.querySelectorAll('.filter-more-btn li');
-const filterDepth1Li = document.querySelectorAll('li.filter_depth1_li');
-
-filterMoreUl.addEventListener('click', function(e){
-  filterMoreUlLi.forEach((el, idx)=>{
-    if(e.target == el){
-      if(idx == 0){
-        el.classList.add("search-condition-off");
-        filterDepth1Li[4].classList.remove("search-condition-off");
-        filterMoreUlLi[1].classList.remove("search-condition-off");
-      }else if(idx == 1){
-        el.classList.add("search-condition-off");
-        filterDepth1Li[4].classList.add("search-condition-off");
-        filterMoreUlLi[0].classList.remove("search-condition-off");
-      }
-    }
-  })
-})
-
-//product info
+// section2 - filter
+const filterSubmit = document.querySelector("#sec2 .btn-box input[type='submit']");
+const filterMoreBtn = document.querySelector("#sec2 span.more-btn");
+const filterBox = document.querySelector("#sec2 .fieldset-box");
+//section3 - product info
 const listTotal = document.querySelector('.list-total strong');
 const productListLi = document.querySelectorAll('.product-list ul li');
-const listName = document.querySelectorAll('.product-txt p');
-const listSubject = document.querySelectorAll('.badges .subject');
-const listGrade = document.querySelectorAll('.badges .grade');
-const listThum = document.querySelectorAll('.product-thum img');
+const pagerUl = document.querySelector('#sec3 .pager-box ul');
+const pagerUlLi = document.querySelectorAll('#sec3 .pager-box ul li');
+const bigArrowLeft = document.querySelector('#sec3 .pager-box span.big-arrow.left');
+const bigArrowRight = document.querySelector('#sec3 .pager-box span.big-arrow.right');
+const smallArrowLeft = document.querySelector('#sec3 .pager-box span.small-arrow.left');
+const smallArrowRight = document.querySelector('#sec3 .pager-box span.small-arrow.right');
 
+// section2 - filter
+let filterMoreTrigger = true;
+filterMoreBtn.addEventListener('click', function(e){
+  if(filterMoreTrigger){
+    filterBox.classList.add('more-on');
+    filterMoreBtn.innerText = "필터 닫기";
+    filterMoreTrigger = false;
+  }else{
+    filterBox.classList.remove('more-on');
+    filterMoreBtn.innerText = "필터 더보기";
+    filterMoreTrigger = true;
+  }
+});
+filterSubmit.addEventListener('click', function(e){
+  e.preventDefault();
+});
+//section3 - pager
 listTotal.innerText = productListLi.length;
-const productName = [
-  "초등영문법 문장의 원리 Level2", "초끝 문장 학습+글쓰기 2단계", "초끝 문장 학습+글쓰기 1단계", "초등영문법 문장의 원리 Level3",
-  "초등영문법 문장의 원리 Level4", "이서윤쌤의 초등 한자 어휘 끝내기 3단계", "초끝 스스로 시계+달력+계획표", "초끝 저절로 구구단"
-]
-const productSubject = [
-  "영어", "국어", "국어", "영어", 
-  "영어", "국어", "수학", "수학"
-]
-const productGrade = [
-  '초1, 초2, 초3, 초4', "초1, 초2", "초1, 초2", "초3, 초4, 초5, 초6", 
-  "초3, 초4, 초5, 초6", "초4, 초5", "초1, 초2", "초1, 초2"
-]
-for(let i = 0; i<listName.length; i++){
-  listName[i].innerText = productName[i];
-  listSubject[i].innerText = productSubject[i];
-  listGrade[i].innerText = productGrade[i]
-}
-listThum.forEach((el, idx)=>{
-  el.setAttribute('src', `img/sub1/sub1_${idx}.jpg`);
-  el.setAttribute('alt', productName[idx]);
-})
+pagerUl.addEventListener('click', function(e){
+  pagerUlLi.forEach((el, idx)=>{
+    if(e.target == el){
+      el.classList.add('page-on');
+      productListLi.forEach((el2, idx2)=>{
+        if(productListLi.length <= (idx+1)*8){
+          if(idx2>=idx*8 && idx2<productListLi.length){
+            el2.classList.remove('hidden-product');
+          }else{
+            el2.classList.add('hidden-product');
+          }
+        }else{
+          if(idx2>=idx*8 && idx2<(idx+1)*8){
+            el2.classList.remove('hidden-product');
+          }else{
+            el2.classList.add('hidden-product');
+          }
+        }
+      });
+    }else{
+      el.classList.remove('page-on');
+    }
+  });
+});
+//section3 - arrow btn
+let arrowTrigger = 0;
+function nextPageFn(){
+  arrowTrigger++;
+  if(arrowTrigger>pagerUlLi.length-1){
+    arrowTrigger = pagerUlLi.length-1;
+    return
+  };
+  pagerUlLi.forEach((el, idx)=>{
+    if(idx == arrowTrigger){
+      el.classList.add('page-on');
+      productListLi.forEach((el2, idx2)=>{
+        if(productListLi.length <= (idx+1)*8){
+          if(idx2>=idx*8 && idx2<productListLi.length){
+            el2.classList.remove('hidden-product');
+          }else{
+            el2.classList.add('hidden-product');
+          }
+        }else{
+          if(idx2>=idx*8 && idx2<(idx+1)*8){
+            el2.classList.remove('hidden-product');
+          }else{
+            el2.classList.add('hidden-product');
+          }
+        }
+      });
+    }else{
+      el.classList.remove('page-on');
+    }
+  });
+};
+function prePageFn(){
+  arrowTrigger--;
+  if(arrowTrigger<0){
+    arrowTrigger = 0;
+    return
+  };
+  pagerUlLi.forEach((el, idx)=>{
+    if(idx == arrowTrigger){
+      el.classList.add('page-on');
+      productListLi.forEach((el2, idx2)=>{
+        if(productListLi.length <= (idx+1)*8){
+          if(idx2>=idx*8 && idx2<productListLi.length){
+            el2.classList.remove('hidden-product');
+          }else{
+            el2.classList.add('hidden-product');
+          }
+        }else{
+          if(idx2>=idx*8 && idx2<(idx+1)*8){
+            el2.classList.remove('hidden-product');
+          }else{
+            el2.classList.add('hidden-product');
+          }
+        }
+      });
+    }else{
+      el.classList.remove('page-on');
+    }
+  });
+};
+bigArrowRight.addEventListener('click', nextPageFn);
+smallArrowRight.addEventListener('click', nextPageFn);
+bigArrowLeft.addEventListener('click', prePageFn);
+smallArrowLeft.addEventListener('click', prePageFn);

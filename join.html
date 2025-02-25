@@ -4,13 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입</title>
-  <script src="js/js_header_footer.js" defer></script>
+  <!-- js -->
+  <script src="js/js_common.js" defer></script>
+  <script src="js/js_join.js" defer></script>
   <!-- style -->
   <link rel="stylesheet" href="css/pages/join.css">
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <!-- favicon -->
   <link rel="shortcut icon" href="img/favicon/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-152.png">
@@ -34,15 +32,12 @@
       <!-- top-header(search, login-icon, mobile logo) : start-->
       <div class="top-header">
         <div class="inner-top-header">
-          <h2 class="logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
+          <h2 class="mobile-logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
           <div class="short-menu">
             <form action="#" method="post" id="headerSearch">
-              <fieldset>
-                <legend>검색창</legend>
-                <label for="searchBox"></label>
-                <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
-                <button disabled><span class="ir_pm">검색</span></button>
-              </fieldset>
+              <label for="searchBox">검색</label>
+              <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
+              <button disabled><span class="ir_pm">검색</span></button>
             </form>
             <ul class="icons_ul">
               <li class="mobile-icon"><a href="#"><span class="ir_pm">검색</span></a></li>
@@ -61,7 +56,7 @@
         </div>
       </div>
       <!-- top-header(search, login-icon) : end-->
-      <!-- GNB, web logo, web menu icon : start -->
+      <!-- nav, web logo, web menu icon : start -->
       <nav id="nav">
         <div class="inner-nav">
           <h1><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h1>
@@ -82,9 +77,7 @@
           </div>
         </div>
       </nav>
-      <!-- GNB, web logo, web menu icon : end -->
-      <!-- slide down LNB : start -->
-      <div class="slide-nav">
+      <div class="slide-nav lnb">
         <ul class="depth1_ul">
           <li class="depth1_li">
             <a href="sub1.html">도서</a>
@@ -122,7 +115,7 @@
           </li>
         </ul>
       </div>
-      <!-- slide down LNB : end -->
+      <!-- nav, web logo, web menu icon : end -->
     </header>
     <!-- header : end -->
     <!-- container : start -->
@@ -147,89 +140,90 @@
             </ul>
           </div>
           <form action="#" method="post" class="join-form">
-            <fieldset>
-              <legend>회원가입</legend>
-              <ul class="form-top">
-                <li>
-                  <label for="member-group" class="required">회원구분</label>
+            <fieldset class="account-info">
+              <legend>계정 정보</legend>
+              <ul>
+                <li class="group required tablet100">
+                  <label for="member-group">회원구분</label>
                   <div class="input-box">
-                    <input type="text" id="member-group" name="member-group" readonly value="일반">
+                    <input type="text" value="일반" name="member-group" id="member-group" required>
                   </div>
                 </li>
-                <li>
-                  <label for="member-id" class="required">아이디</label>
+                <li class="account-id web478 required">
+                  <label for="member-id">아이디</label>
                   <div class="input-box">
-                    <input type="text" id="member-id" name="member-id" required>
-                    <span class="input-btn">중복확인</span>
+                    <input type="text" name="member-id" id="member-id" required>
+                    <a href="#" class="id-check input-btn">중복확인</a>
                   </div>
                 </li>
-                <li>
-                  <label for="member-pw" class="required">비밀번호</label>
+                <li class="web478 required tablet100">
+                  <label for="member-pw">비밀번호</label>
                   <div class="input-box">
-                    <input type="password" id="member-pw" name="member-pw" required>
+                    <input type="password" name="member-pw" id="member-pw" required>
                   </div>
                 </li>
-                <li>
-                  <label for="member-pw-check" class="required">비밀번호 확인</label>
+                <li class="web478 required tablet100">
+                  <label for="member-pw2">비밀번호 확인</label>
                   <div class="input-box">
-                    <input type="password" id="member-pw-check" name="member-pw-check" required>
+                    <input type="password" name="member-pw2" id="member-pw2" required>
                     <p class="double-check"></p>
                   </div>
                 </li>
               </ul>
-              <ul class="form-bottom">
-                <li class="name">
-                  <label for="member-name" class="required">이름</label>
+            </fieldset>
+            <fieldset class="user-info">
+              <legend>회원 정보</legend>
+              <ul>
+                <li class="web478 required tablet100">
+                  <label for="user-name">이름</label>
                   <div class="input-box">
-                    <input type="text" id="member-name" required>
+                    <input type="text" name="user-name" id="user-name">
                   </div>
                 </li>
-                <li class="birth">
-                  <label for="member-birth" class="required">생년월일</label>
-                  <ul class="input-box">
-                    <li><input type="text" id="member-birth-year" title="member-birth-year" required></li>
-                    <li><input type="text" id="member-birth-month" title="member-birth-month" required></li>
-                    <li><input type="text" id="member-birth-date" title="member-birth-date" required></li>
-                  </ul>
+                <li class="birth required">
+                  <label>생년월일</label>
+                  <div class="input-box">
+                    <input type="number" name="user-birth-year" id="user-birth-year" required min="1900" max="2100">
+                    <input type="number" name="user-birth-month" id="user-birth-month" required min="1" max="12">
+                    <input type="number" name="user-birth-day" id="user-birth-day" required min="28" max="31">
+                  </div>
                 </li>
-                <li class="phone">
-                  <label for="member-phone" class="required">휴대폰 번호</label>
-                  <ul class="input-box">
-                    <li><input type="text" id="member-phone-front" title="member-phone-front" required></li>
+                <li class="phone required">
+                  <label>휴대폰 번호</label>
+                  <div class="input-box">
+                    <input type="number" name="user-phone-front" id="user-phone-front" required>
                     <span class="dash">-</span>
-                    <li><input type="text" id="member-phone-middle" title="member-phone-middle" required></li>
+                    <input type="number" name="user-phone-middle" id="user-phone-middle" required max="9999">
                     <span class="dash">-</span>
-                    <li><input type="text" id="member-phone-back" title="member-phone-back" required></li>
-                  </ul>
+                    <input type="number" name="user-phone-back" id="user-phone-back" required max="9999">
+                  </div>
                 </li>
                 <li class="email">
-                  <label for="member-email">이메일</label>
-                  <ul class="input-box">
-                    <li class="email-id"><input type="text" id="member-email-id" title="member-email-id"></li>
-                    <span class="email-at">&#64</span>
-                    <li class="email-domain">
-                      <select name="member-email-domain" id="member-email-domain">
-                        <option value="직접선택" selected>직접선택</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="nate.com">nate.com</option>
-                        <option value="daum.net">daum.net</option>
-                      </select>
-                    </li>
-                    <li class="email-self"><input type="text" id="member-email-self" title="member-email-self"></li>
-                  </ul>
+                  <label>이메일</label>
+                  <div class="input-box">
+                    <input type="number" name="user-email-id" id="user-email-id">
+                    <span class="at">&#64</span>
+                    <select name="user-email-domain" id="user-email-domain">
+                      <option value="self">직접선택</option>
+                      <option value="naver.com">naver.com</option>
+                      <option value="gamil.com">gamil.com</option>
+                      <option value="nate.com">nate.come</option>
+                      <option value="daum.net">daum.net</option>
+                    </select>
+                    <input type="text" name="user-email-self" id="user-email-self">
+                  </div>
                 </li>
-                <li class="address">
-                  <label for="member-address">주소</label>
-                  <ul class="input-box">
-                    <li><input type="text" id="member-address-front" title="member-address-front"></li>
-                    <span class="input-btn">우편번호 찾기</span>
-                    <li><input type="text" id="member-address-back" title="member-address-back"></li>
-                  </ul>
+                <li class="web478 address">
+                  <label>주소</label>
+                  <div class="input-box">
+                    <input type="number" name="user-address-front" id="user-address-front">
+                    <a href="#" class="input-btn">우편번호 찾기</a>
+                    <input type="number" name="user-address-back" id="user-address-back">
+                  </div>
                 </li>
               </ul>
-              <button id="submit-btn">회원가입</button>
             </fieldset>
+            <button class="join-btn">회원가입</button>
           </form>
         </div>
       </section>
@@ -320,30 +314,6 @@
     <!-- footer : end -->
   </div>
   <!-- wrap : end -->
-  <script>
-    const pwCheck = document.querySelector('.double-check');
-    const pw1 = document.querySelector('#member-pw');
-    const pw2 = document.querySelector('#member-pw-check');
-    const submitBtn = document.querySelector('#submit-btn');
-
-    pw2.addEventListener('keyup', function () {
-      if (pw1.value === pw2.value) {
-        pwCheck.innerText = "비밀번호가 일치합니다";
-        pwCheck.style.color = "var(--main-blueColor)";
-      } else {
-        pwCheck.innerText = "비밀번호가 일치하지 않습니다";
-        pwCheck.style.color = "#F00";
-      }
-    })
-
-    submitBtn.addEventListener('click', function (e) {
-      if (pw1.value !== pw2.value) {
-        pwCheck.innerText = "비밀번호가 일치하지 않습니다";
-        pw2.focuse();
-        return false;
-      }
-    })
-  </script>
 </body>
 
 </html>

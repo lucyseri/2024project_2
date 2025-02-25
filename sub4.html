@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메가스터디북스</title>
-    <script src="js/js_header_footer.js" defer></script>
+    <script src="js/js_common.js" defer></script>
     <script src="js/js_sub_filter.js" defer></script>
     <!-- style -->
     <link rel="stylesheet" href="css/pages/sub4.css">
@@ -36,15 +36,12 @@
       <!-- top-header(search, login-icon, mobile logo) : start-->
       <div class="top-header">
         <div class="inner-top-header">
-          <h2 class="logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
+          <h2 class="mobile-logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
           <div class="short-menu">
             <form action="#" method="post" id="headerSearch">
-              <fieldset>
-                <legend>검색창</legend>
-                <label for="searchBox"></label>
-                <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
-                <button disabled><span class="ir_pm">검색</span></button>
-              </fieldset>
+              <label for="searchBox">검색</label>
+              <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
+              <button disabled><span class="ir_pm">검색</span></button>
             </form>
             <ul class="icons_ul">
               <li class="mobile-icon"><a href="#"><span class="ir_pm">검색</span></a></li>
@@ -63,7 +60,7 @@
         </div>
       </div>
       <!-- top-header(search, login-icon) : end-->
-      <!-- GNB, web logo, web menu icon : start -->
+      <!-- nav, web logo, web menu icon : start -->
       <nav id="nav">
         <div class="inner-nav">
           <h1><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h1>
@@ -84,9 +81,7 @@
           </div>
         </div>
       </nav>
-      <!-- GNB, web logo, web menu icon : end -->
-      <!-- slide down LNB : start -->
-      <div class="slide-nav">
+      <div class="slide-nav lnb">
         <ul class="depth1_ul">
           <li class="depth1_li">
             <a href="sub1.html">도서</a>
@@ -124,7 +119,7 @@
           </li>
         </ul>
       </div>
-      <!-- slide down LNB : end -->
+      <!-- nav, web logo, web menu icon : end -->
     </header>
     <!-- header : end -->
     <!-- container: start -->
@@ -134,13 +129,10 @@
         <div class="inner-con">
           <div class="title">
             <h2>단행본</h2>
-            <form action="#" method="post">
-              <fieldset>
-                <legend>도서 검색</legend>
-                <label for="book-search">도서 검색</label>
-                <input type="text" id="book-search" name="book-search" placeholder="제목, 저자, 과목, 키워드로 도서를 검색할 수 있습니다.">
-                <button disabled></button>
-              </fieldset>
+            <form action="#" method="post" id="title-search">
+              <label for="book-search">도서 검색</label>
+              <input type="text" id="book-search" name="book-search" placeholder="제목, 저자, 과목, 키워드로 도서를 검색할 수 있습니다.">
+              <button disabled></button>
             </form>
           </div>
         </div>
@@ -151,161 +143,77 @@
         <div class="inner-con">
           <div class="filter-box">
             <form action="#" method="post" id="filter-form">
-              <ul class="filter_depth1_ul">
-                <li class="filter_depth1_li">
-                  <span class="depth1_label">분류</span>
-                  <ul class="filter_depth2_ul category_ul">
-                    <li class="category_li"><a href="sub1.html">초등</a></li>
-                    <li class="category_li"><a href="sub2.html">중등</a></li>
-                    <li class="category_li"><a href="sub3.html">고등</a></li>
-                    <li class="category_li"><a href="sub4.html">단행본</a></li>
-                  </ul>
-                </li>
-                <li class="filter_depth1_li">
-                  <span class="depth1_label">과목</span>
-                  <ul class="filter_depth2_ul">
-                    <li class="filter_depth2_li">
-                      <label for="subject-all">
-                        <input type="radio" id="subject-all" name="subject" value="subject-all" checked>
-                        <span>전체</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="subject-korean">
-                        <input type="radio" id="subject-korean" name="subject" value="subject-korean">
-                        <span>국어</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="subject-english">
-                        <input type="radio" id="subject-english" name="subject" value="subject-english">
-                        <span>영어</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="subject-math">
-                        <input type="radio" id="subject-math" name="subject" value="subject-math">
-                        <span>수학</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="subject-science">
-                        <input type="radio" id="subject-science" name="subject" value="subject-science">
-                        <span>과학</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="subject-history">
-                        <input type="radio" id="subject-history" name="subject" value="subject-history">
-                        <span>사회/한국사</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="subject-kid">
-                        <input type="radio" id="subject-kid" name="subject" value="subject-kid">
-                        <span>어린이</span>
-                      </label>
-                    </li>
-                  </ul>
-                </li>
-                <li class="filter_depth1_li">
-                  <span class="depth1_label">학년</span>
-                  <ul class="filter_depth2_ul">
-                    <li class="filter_depth2_li">
-                      <label for="grade-all">
-                        <input type="radio" id="grade-all" name="grade" value="grade-all" checked>
-                        <span>전체</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-pre">
-                        <input type="radio" id="grade-pre" name="grade" value="grade-pre">
-                        <span>예비초</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-1">
-                        <input type="radio" id="grade-1" name="grade" value="grade-1">
-                        <span>초1</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-2">
-                        <input type="radio" id="grade-2" name="grade" value="grade-2">
-                        <span>초2</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-3">
-                        <input type="radio" id="grade-3" name="grade" value="grade-3">
-                        <span>초3</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-4">
-                        <input type="radio" id="grade-4" name="grade" value="grade-4">
-                        <span>초4</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-5">
-                        <input type="radio" id="grade-5" name="grade" value="grade-5">
-                        <span>초5</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="grade-6">
-                        <input type="radio" id="grade-6" name="grade" value="grade-6">
-                        <span>초6</span>
-                      </label>
-                    </li>
-                  </ul>
-                </li>
-                <li class="filter_depth1_li">
-                  <span class="depth1_label">학기</span>
-                  <ul class="filter_depth2_ul">
-                    <li class="filter_depth2_li">
-                      <label for="semester-all">
-                        <input type="radio" id="semester-all" name="semester" value="semester-all" checked>
-                        <span>전체</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="semester-pre">
-                        <input type="radio" id="semester-pre" name="semester" value="semester-pre">
-                        <span>1학기</span>
-                      </label>
-                    </li>
-                    <li class="filter_depth2_li">
-                      <label for="semester-1">
-                        <input type="radio" id="semester-1" name="semester" value="semester-1">
-                        <span>2학기</span>
-                      </label>
-                    </li>
-                  </ul>
-                </li>
-                <li class="filter_depth1_li search-condition-off">
-                  <span class="depth1_label">시리즈</span>
-                  <ul class="filter_depth2_ul">
-                    <li class="filter_depth2_select">
-                      <label for="series">
-                        <select name="series" id="series">
-                          <option value="all">전체</option>
-                          <option value="초끝">초끝</option>
-                          <option value="이서윤쌤 한자 어휘">이서윤쌤 한자 어휘</option>
-                          <option value="문장의 원리">문장의 원리</option>
-                          <option value="초등개념수학">초등개념수학</option>
-                          <option value="매가독서논술">매가독서논술</option>
-                        </select>
-                      </label>
-                    </li>
-                  </ul>
-                </li>
-                <ul class="filter-more-btn">
-                  <li class="show">필터 더보기</li>
-                  <li class="hidden search-condition-off">필터 접기</li>
-                </ul>
-              </ul>
+              <div class="fieldset-box">
+                <div class="fieldset-row" role="group">
+                  <legend>분류</legend>
+                  <div class="label-box">
+                    <a href="sub1.html" class="gnb-link">초등</a>
+                    <a href="sub2.html" class="gnb-link">중등</a>
+                    <a href="sub3.html" class="gnb-link">고등</a>
+                    <a href="sub4.html" class="gnb-link checked">단행본</a>
+                  </div>
+                </div>
+                <div class="fieldset-row" role="group">
+                  <legend>분야</legend>
+                  <div class="label-box">
+                    <label for="subject-all">
+                      <input type="radio" name="subject" id="subject-all" checked>
+                      <span class="label-txt">전체</span>
+                    </label>
+                    <label for="subject-it">
+                      <input type="radio" name="subject" id="subject-it">
+                      <span class="label-txt">IT모바일</span>
+                    </label>
+                    <label for="subject-economy">
+                      <input type="radio" name="subject" id="subject-economyh">
+                      <span class="label-txt">경제경영</span>
+                    </label>
+                    <label for="subject-humanities">
+                      <input type="radio" name="subject" id="subject-humanities">
+                      <span class="label-txt">인문교양</span>
+                    </label>
+                    <label for="subject-enlightenment">
+                      <input type="radio" name="subject" id="subject-enlightenment">
+                      <span class="label-txt">자기계발</span>
+                    </label>
+                    <label for="subject-education">
+                      <input type="radio" name="subject" id="subject-education">
+                      <span class="label-txt">자녀교육</span>
+                    </label>
+                    <label for="subject-essay">
+                      <input type="radio" name="subject" id="subject-essay">
+                      <span class="label-txt">에세이</span>
+                    </label>
+                    <label for="subject-cook">
+                      <input type="radio" name="subject" id="subject-cook">
+                      <span class="label-txt">요리</span>
+                    </label>
+                    <label for="subject-kid">
+                      <input type="radio" name="subject" id="subject-kid">
+                      <span class="label-txt">어린이</span>
+                    </label>
+                    <label for="subject-baby">
+                      <input type="radio" name="subject" id="subject-baby">
+                      <span class="label-txt">유아</span>
+                    </label>
+                    <label for="subject-teen">
+                      <input type="radio" name="subject" id="subject-teen">
+                      <span class="label-txt">청소년</span>
+                    </label>
+                    <label for="subject-history">
+                      <input type="radio" name="subject" id="subject-history">
+                      <span class="label-txt">한국사/한능검</span>
+                    </label>
+                    <label for="subject-novel">
+                      <input type="radio" name="subject" id="subject-novel">
+                      <span class="label-txt">소설</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="more-box">
+                  <span class="more-btn">필터 더보기</span>
+                </div>
+              </div>
               <div class="btn-box">
                 <input type="reset" value="초기화">
                 <input type="submit" value="필터 적용">
@@ -322,23 +230,29 @@
             <div class="list-total">
               총 <strong></strong>건
             </div>
-            <ul class="list-order">
-              <li class="list-order-on">최신순</li>
-              <li>인기순</li>
-            </ul>
+            <div class="product-array">
+              <div class="input-box">
+                <input type="radio" name="array" id="new-array" value="new" checked>
+                <label for="new-array">최신순</label>
+              </div>
+              <div class="input-box">
+                <input type="radio" name="array" id="best-array" value="best">
+                <label for="best-array">인기순</label>
+              </div>
+            </div>
           </div>
           <div class="product-list">
             <ul>
               <li>
                 <a href="update.html">
                   <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
+                    <img src="img/section5/sec5_3_3.jpg" alt="서울대 의대 1학년의 찐 합격 노트">
                   </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
+                  <div class="product-info">
+                    <p class="name">서울대 의대 1학년의 찐 합격 노트</p>
                     <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
+                      <span class="subject-badge">청소년</span>
+                      <span class="grade-badge">중3, 예비고, 고1, 고2, 성인</span>
                     </div>
                   </div>
                 </a>
@@ -346,13 +260,13 @@
               <li>
                 <a href="update.html">
                   <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
+                    <img src="img/section5/sec5_0_0.jpg" alt="큰별썜 최대성의 스토리 한국사 사전">
                   </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
+                  <div class="product-info">
+                    <p class="name">큰별썜 최대성의 스토리 한국사 사전</p>
                     <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
+                      <span class="subject-badge">어린이</span>
+                      <span class="grade-badge">3, 초4, 초5, 초6, 예비중, 중1, 중2</span>
                     </div>
                   </div>
                 </a>
@@ -360,13 +274,13 @@
               <li>
                 <a href="update.html">
                   <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
+                    <img src="img/section5/sec5_3_1.jpg" alt="하와이 대저택 100일 미라클">
                   </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
+                  <div class="product-info">
+                    <p class="name">하와이 대저택 100일 미라클</p>
                     <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
+                      <span class="subject-badge">자기계발</span>
+                      <span class="grade-badge">성인</span>
                     </div>
                   </div>
                 </a>
@@ -374,82 +288,27 @@
               <li>
                 <a href="update.html">
                   <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
+                    <img src="img/section5/sec5_3_5.jpg" alt="미술관에 가고 싶어졌습니다">
                   </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
+                  <div class="product-info">
+                    <p class="name">미술관에 가고 싶어졌습니다</p>
                     <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="update.html">
-                  <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
-                  </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
-                    <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="update.html">
-                  <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
-                  </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
-                    <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="update.html">
-                  <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
-                  </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
-                    <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="update.html">
-                  <div class="product-thum">
-                    <img src="img/sub1/sub1_0.jpg" alt="상품이미지">
-                  </div>
-                  <div class="product-txt">
-                    <p class="name">초등영문법 문장의 원리 Level2</p>
-                    <div class="badges">
-                      <span class="subject">영어</span>
-                      <span class="grade">초1, 초2, 초3, 초4</span>
+                      <span class="subject-badge">인문교양</span>
+                      <span class="grade-badge">성인</span>
                     </div>
                   </div>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="pages">
+          <div class="pager-box">
+            <span class="small-arrow left"></span>
+            <span class="big-arrow left"></span>
             <ul>
-              <li><a href="#" class="page-on">1</a></li>
-              <li><a href="#">2</a></li>
-              <span class="small-arrow arrow"></span>
-              <span class="big-arrow arrow"></span>
+              <li class="page-on">1</li>
             </ul>
+            <span class="small-arrow"></span>
+            <span class="big-arrow"></span>
           </div>
         </div>
       </section>

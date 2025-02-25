@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
-  <script src="js/js_header_footer.js" defer></script>
+  <!-- js -->
+  <script src="js/js_common.js" defer></script>
   <!-- style -->
   <link rel="stylesheet" href="css/pages/login.css">
   <!-- font -->
@@ -34,15 +35,12 @@
       <!-- top-header(search, login-icon, mobile logo) : start-->
       <div class="top-header">
         <div class="inner-top-header">
-          <h2 class="logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
+          <h2 class="mobile-logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
           <div class="short-menu">
             <form action="#" method="post" id="headerSearch">
-              <fieldset>
-                <legend>검색창</legend>
-                <label for="searchBox"></label>
-                <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
-                <button disabled><span class="ir_pm">검색</span></button>
-              </fieldset>
+              <label for="searchBox">검색</label>
+              <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
+              <button disabled><span class="ir_pm">검색</span></button>
             </form>
             <ul class="icons_ul">
               <li class="mobile-icon"><a href="#"><span class="ir_pm">검색</span></a></li>
@@ -61,7 +59,7 @@
         </div>
       </div>
       <!-- top-header(search, login-icon) : end-->
-      <!-- GNB, web logo, web menu icon : start -->
+      <!-- nav, web logo, web menu icon : start -->
       <nav id="nav">
         <div class="inner-nav">
           <h1><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h1>
@@ -82,9 +80,7 @@
           </div>
         </div>
       </nav>
-      <!-- GNB, web logo, web menu icon : end -->
-      <!-- slide down LNB : start -->
-      <div class="slide-nav">
+      <div class="slide-nav lnb">
         <ul class="depth1_ul">
           <li class="depth1_li">
             <a href="sub1.html">도서</a>
@@ -122,7 +118,7 @@
           </li>
         </ul>
       </div>
-      <!-- slide down LNB : end -->
+      <!-- nav, web logo, web menu icon : end -->
     </header>
     <!-- header : end -->
     <!-- container : start -->
@@ -133,29 +129,35 @@
           <div class="login">
             <h2>LOGIN</h2>
             <form action="#" method="post">
-              <fieldset>
-                <legend>로그인</legend>
-                <div class="login-id-box">
+              <legend>로그인</legend>
+              <ul>
+                <li>
                   <label for="login-id">아이디</label>
-                  <div class="input-box"><input type="text" id="login-id" name="login-id" placeholder="아이디를 입력해주세요" required></div>
-                </div>
-                <div class="login-pw-box">
+                  <div class="input-box">
+                    <input type="text" id="login-id" name="login-id" placeholder="아이디를 입력해주세요" required>
+                  </div>
+                </li>
+                <li>
                   <label for="login-pw">비밀번호</label>
-                  <div class="input-box"><input type="password" id="login-pw" name="login-pw" placeholder="비밀번호를 입력해주세요" required></div>
-                </div>
-                <div class="select-box">
-                  <label for="login-keep">
-                    <input type="checkbox" id="login-keep" name="login-keep">
-                    <span class="circle"></span>
-                    <span class="login-keep-txt">로그인 유지하기</span>
-                  </label>
+                  <div class="input-box">
+                    <input type="password" id="login-pw" name="login-pw" placeholder="비밀번호를 입력해주세요" required>
+                  </div>
+                </li>
+              </ul>
+              <div class="option-box">
+                <label for="login-keep">
+                  <input type="checkbox" id="login-keep" name="login-keep">
+                  <span class="login-keep-txt">로그인 유지하기</span>
+                </label>
+                <div class="links">
                   <a href="#" class="find-id">아이디 찾기</a>
+                  <span class="bar"></span>
                   <a href="#" class="find-pw">비밀번호 찾기</a>
                 </div>
-                <div class="btn-box">
-                  <button>로그인</button>
-                </div>
-              </fieldset>
+              </div>
+              <div class="btn-box">
+                <button>로그인</button>
+              </div>
             </form>
           </div>
           <div class="join">

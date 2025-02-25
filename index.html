@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>메가스터디북스</title>
-  <script src="js/js_header_footer.js" defer></script>
+  <script src="js/js_common.js" defer></script>
   <script src="js/js_index.js" defer></script>
   <link rel="stylesheet" href="css/pages/index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-152.png">
   <link rel="icon" href="img/favicon/favicon-16.png" sizes="16x16">
@@ -19,7 +15,6 @@
   <link rel="icon" href="img/favicon/favicon-64.png" sizes="64x64">
   <link rel="icon" href="img/favicon/favicon-128.png" sizes="128x128">
 </head>
-
 <body>
   <!-- skip menu : start -->
   <div id="skip">
@@ -39,15 +34,12 @@
       <!-- top-header(search, login-icon, mobile logo) : start-->
       <div class="top-header">
         <div class="inner-top-header">
-          <h2 class="logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
+          <h2 class="mobile-logo"><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h2>
           <div class="short-menu">
             <form action="#" method="post" id="headerSearch">
-              <fieldset>
-                <legend>검색창</legend>
-                <label for="searchBox"></label>
-                <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
-                <button disabled><span class="ir_pm">검색</span></button>
-              </fieldset>
+              <label for="searchBox">검색</label>
+              <input type="text" name="searchBox" id="searchBox" placeholder="검색어를 입력해주세요">
+              <button disabled><span class="ir_pm">검색</span></button>
             </form>
             <ul class="icons_ul">
               <li class="mobile-icon"><a href="#"><span class="ir_pm">검색</span></a></li>
@@ -66,7 +58,7 @@
         </div>
       </div>
       <!-- top-header(search, login-icon) : end-->
-      <!-- GNB, web logo, web menu icon : start -->
+      <!-- nav, web logo, web menu icon : start -->
       <nav id="nav">
         <div class="inner-nav">
           <h1><a href="index.html"><img src="img/logo.svg" alt="메가스터디북스 로고"></a></h1>
@@ -87,9 +79,7 @@
           </div>
         </div>
       </nav>
-      <!-- GNB, web logo, web menu icon : end -->
-      <!-- slide down LNB : start -->
-      <div class="slide-nav">
+      <div class="slide-nav lnb">
         <ul class="depth1_ul">
           <li class="depth1_li">
             <a href="sub1.html">도서</a>
@@ -127,7 +117,7 @@
           </li>
         </ul>
       </div>
-      <!-- slide down LNB : end -->
+      <!-- nav, web logo, web menu icon : end -->
     </header>
     <!-- header : end -->
     <!-- container: start -->
@@ -135,7 +125,7 @@
       <!-- section1(main-banenr) : start -->
       <section id="sec1">
         <div class="sec-con">
-          <h2>메인 배너</h2>
+          <h2 class="ir_pm">메인 배너</h2>
           <div class="banner-img">
             <ul class="banner_img_ul">
               <li class="banner_img_li">
@@ -207,7 +197,7 @@
       <!-- section2(archive) : start -->
       <section id="sec2">
         <div class="inner-con">
-          <h2>주요 메뉴</h2>
+          <h2 class="ir_pm">주요 메뉴</h2>
           <ul>
             <li>
               <a href="update.html">
@@ -330,7 +320,7 @@
       <!-- section4 : start -->
       <section id="sec4">
         <div class="inner-con">
-          <h2>초등 문해력 진단 테스트</h2>
+          <h2 class="ir_pm">초등 문해력 진단 테스트</h2>
           <a href="http://m.megastudyholdings.com/literacy/Intro1.asp" target="_blank">
             <img class="web-ver-banenr" src="img/section4/sec4_banner_web.png"
               alt="우리 아이의 문해력의 몇 점? 초등 문해력 진단 테스트. 지금 바로 진단 테스트를 시작해 보세요">
@@ -345,7 +335,7 @@
         <div class="inner-con">
           <div class="title">
             <h2>베스트 셀러</h2>
-            <ul>
+            <ul class="category">
               <li class="sec5-on">초등</li>
               <li>중등</li>
               <li>고등</li>
@@ -436,7 +426,7 @@
             <h2>메가스터디북스 유튜브</h2>
             <div class="arrow-btn">
               <span class="left-arrow">다음</span>
-              <span class="right-arrow">이전</span>
+              <span class="right-arrow inactive">이전</span>
             </div>
           </div>
           <div class="slider-con">
@@ -474,37 +464,42 @@
         <div class="inner-con">
           <div class="title">
             <h2>이벤트</h2>
-            <a href="update.html" target="_blank"><span>view more</span></a>
+            <a href="update.html" target="_blank">
+              <span class="txt">View more</span>
+              <span class="arrow-img"></span>
+            </a>
           </div>
-          <ul>
-            <li>
-              <a href="update.html" target="_blank">
-                <div class="event-title">
-                  <span class="badge">기획전</span>
-                  <strong>믿고 보는 메가스터디 선생님 시리즈</strong>
-                </div>
-                <img src="img/section7/sec7_0.png" alt="믿고 보는 메가스터디 선생님 시리즈">
-              </a>
-            </li>
-            <li>
-              <a href="update.html" target="_blank">
-                <div class="event-title">
-                  <span class="badge">기획전</span>
-                  <strong>&lt;초끝&gt; 출간 기념! 받아쓰기 노트 증정</strong>
-                </div>
-                <img src="img/section7/sec7_1.png" alt="초끝 출간 기념 받아쓰기 노트 증정">
-              </a>
-            </li>
-            <li>
-              <a href="update.html" target="_blank">
-                <div class="event-title">
-                  <span class="badge">굿즈</span>
-                  <strong>완쏠 디지털 굿즈 무료 배포</strong>
-                </div>
-                <img src="img/section7/sec7_2.jpg" alt="완쏠 디지털 굿즈 무료 배포">
-              </a>
-            </li>
-          </ul>
+          <div class="events-box">
+            <ul>
+              <li>
+                <a href="update.html" target="_blank">
+                  <div class="event-title">
+                    <span class="badge">기획전</span>
+                    <strong>믿고 보는 메가스터디 선생님 시리즈</strong>
+                  </div>
+                  <img src="img/section7/sec7_0.png" alt="믿고 보는 메가스터디 선생님 시리즈">
+                </a>
+              </li>
+              <li>
+                <a href="update.html" target="_blank">
+                  <div class="event-title">
+                    <span class="badge">기획전</span>
+                    <strong>&lt;초끝&gt; 출간 기념! 받아쓰기 노트 증정</strong>
+                  </div>
+                  <img src="img/section7/sec7_1.png" alt="초끝 출간 기념 받아쓰기 노트 증정">
+                </a>
+              </li>
+              <li>
+                <a href="update.html" target="_blank">
+                  <div class="event-title">
+                    <span class="badge">굿즈</span>
+                    <strong>완쏠 디지털 굿즈 무료 배포</strong>
+                  </div>
+                  <img src="img/section7/sec7_2.jpg" alt="완쏠 디지털 굿즈 무료 배포">
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <!-- section7 : end -->
@@ -546,35 +541,20 @@
         <div class="inner-con">
           <h2>Community</h2>
           <ul>
-            <li>
-              <a href="https://www.instagram.com/megastudybooks" target="_blank">
-                <span class="icon"><span class="ir_pm">메가스터디북스 인스타그램</span></span>
-                <span class="txt">메가스터디북스</span>
-              </a>
+            <li class="insta">
+              <a href="https://www.instagram.com/megastudybooks" target="_blank">메가스터디북스</a>
             </li>
-            <li>
-              <a href="https://www.instagram.com/megastudy_megamom" target="_blank">
-                <span class="icon"><span class="ir_pm">메가맘 인스타그램</span></span>
-                <span class="txt">메가맘</span>
-              </a>
+            <li class="insta">
+              <a href="https://www.instagram.com/megastudy_megamom" target="_blank">메가맘</a>
             </li>
-            <li>
-              <a href="https://www.instagram.com/megacheckbang" target="_blank">
-                <span class="icon"><span class="ir_pm">메가책방 인스타그램</span></span>
-                <span class="txt">메가책방</span>
-              </a>
+            <li class="insta">
+              <a href="https://www.instagram.com/megacheckbang" target="_blank">메가책방</a>
             </li>
-            <li>
-              <a href="https://www.youtube.com/@megastudybooks" target="_blank">
-                <span class="icon"><span class="ir_pm">메가스터디북스 유튜브</span></span>
-                <span class="txt">메가스터디북스</span>
-              </a>
+            <li class="ytb">
+              <a href="https://www.youtube.com/@megastudybooks" target="_blank">메가스터디북스</a>
             </li>
-            <li>
-              <a href="https://cafe.naver.com/megasupporter" target="_blank">
-                <span class="icon"><span class="ir_pm">메가맘 블로그</span></span>
-                <span class="txt">메가맘</span>
-              </a>
+            <li class="ncafe">
+              <a href="https://cafe.naver.com/megasupporter" target="_blank">메가맘</a>
             </li>
           </ul>
         </div>
