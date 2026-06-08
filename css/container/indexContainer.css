@@ -435,11 +435,12 @@ h2{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 21vw;
 }
 .sec5-slider .slider-frame ul li a .best-thum img{
   display: block;
   width: 58%;
+  height: 390px;
+  object-fit: contain;
 }
 .sec5-slider .slider-frame ul li a .best-info{
   margin: 1.7rem 0 0.5rem;
@@ -668,10 +669,10 @@ h2{
 }
 #sec9 .inner-con ul li{
   flex: 1;
-  padding: 1rem 1.2rem;
+  padding: 1rem 0.8rem;
   border-radius: 1rem;
   border:  1px solid var(--main-borderColor);
-  background-position: left 1.2rem center;
+  background-position: left 0.8rem center;
   background-repeat: no-repeat;
   background-size: 1.1rem;
 }
@@ -692,11 +693,11 @@ h2{
   display: block;
   width: 100%;
   height: auto;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   line-height: 1.1rem;
   background: url("../../img/icons/swiper-button.svg") no-repeat right center / 1rem;
-  padding-left: 1.7rem;
+  padding-left: 1.6rem;
 }
 #sec9 .inner-con ul li a::after{
   content: "";
@@ -828,6 +829,7 @@ h2{
   }
   .sec5-slider .slider-frame ul li a .best-thum img{
     width: 63%;
+    height: 300px;
   }
   .sec5-slider .arrows{
     display: none;
@@ -920,6 +922,10 @@ h2{
     display: flex;
   }
   /* mobile - sec5 */
+  .sec5-slider .slider-frame ul li a .best-thum img{
+    width: 56%;
+    height: 145px;
+  }
   .sec5-slider .slider-frame ul li a .best-info{
     margin: 1rem 0 0.5rem;
   }
