@@ -65,7 +65,7 @@
   display: flex;
   margin: 0 0 1rem 0;
 }
-.filter-box #filter-form .fieldset-box .fieldset-row legend{
+.filter-box #filter-form .fieldset-box .fieldset-row span.legend{
   flex: 0 0 100px;
   max-width: 100px;
   font-size: 0.8rem;
@@ -337,7 +337,7 @@
     margin: 0 0 1.2rem 0;
     flex-wrap: wrap;
   }
-  .filter-box #filter-form .fieldset-box .fieldset-row legend{
+  .filter-box #filter-form .fieldset-box .fieldset-row span.legend{
     flex: 0 1 100%;
     font-size: 1.1rem;
     line-height: 1.25rem;
