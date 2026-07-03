@@ -13,6 +13,7 @@
   line-height: 30px;
   text-align: center;
   color: #fff;
+  z-index: 9999;
 }
 #skip a:active, #skip a:focus{
   top: 0;
