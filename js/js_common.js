@@ -1,9 +1,9 @@
 "use strict";
 //header - menu btn & lnb 
-const topHeaderMenu = document.querySelector('.top-header .menu-icon');
-const topHeaderMenuBar = document.querySelectorAll('.top-header .menu-icon .menu-bar');
-const navMenuIcon = document.querySelector('#nav .menu-icon');
-const navMenuIconBar = document.querySelectorAll('#nav .menu-icon .menu-bar');
+const topHeaderMenu = document.querySelector('.top-header button.menu-icon');
+const topHeaderMenuBar = document.querySelectorAll('.top-header button.menu-icon .menu-bar');
+const navMenuIcon = document.querySelector('#nav button.menu-icon');
+const navMenuIconBar = document.querySelectorAll('#nav button.menu-icon .menu-bar');
 const lnb = document.querySelector('.lnb');
 // footer - family site slide down btn
 const familySiteButton = document.querySelector('.family-site button');
@@ -29,7 +29,7 @@ navMenuIcon.addEventListener('click', function(e){
 //header - web menu
 let webTriger = true;
 topHeaderMenu.addEventListener('click', function(e){
-  e.stopPropagation();
+  // e.stopPropagation();
   if(webTriger){
     topHeaderMenuBar[0].style.transform = "rotate(45deg) translate(6px, 10px)";
     topHeaderMenuBar[1].classList.add('middlebar_off');

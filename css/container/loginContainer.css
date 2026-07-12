@@ -71,11 +71,24 @@ main .login h2{
 .login form .option-box label{
   display: flex;
   align-items: center;
-  margin-right: 10px;
   cursor: pointer;
+  /* margin-right: 10px; */
+  position: relative;
+}
+.login form .option-box label:focus-within{
+  outline: 2px solid #005fcc;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 .login form .option-box label input{
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .login form .option-box label span.login-keep-txt{
   margin: 0 5px;

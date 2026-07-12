@@ -3,45 +3,48 @@
 const sec1Con = document.querySelector('#sec1 .sec-con');
 const banner = document.querySelector('#sec1 .banner-img');
 const bannerUlLi = document.querySelectorAll('#sec1 .banner_img_ul .banner_img_li');
+const bannerUlLiA = document.querySelectorAll('#sec1 .banner_img_ul .banner_img_li a');
 const slideCountCurrent = document.querySelector('#sec1 .slide-count .current-num');
 const slideCountTotal = document.querySelector('#sec1 .slide-count .total-num');
 const arrowBtn = document.querySelector('#sec1 .slide-arrows');
-const arrowBtnSpan = document.querySelectorAll('#sec1 .slide-arrows .arrow-btn');
+const arrowBtnSpan = document.querySelectorAll('#sec1 .slide-arrows button.arrow-btn');
 const slideDotUl = document.querySelector('#sec1 ul.slide_dot_ul');
-const slideDotUlLi = document.querySelectorAll('#sec1 .slide_dot_ul li');
+const slideDotUlLi = document.querySelectorAll('#sec1 .slide_dot_ul li button');
 //section3
 const sec3Hashtag = document.querySelector('.hashtag-list');
 const sec3HashtagUl = document.querySelector('.hashtag-list ul');
-const sec3HashtagLi = document.querySelectorAll('.hashtag-list li');
+const sec3HashtagLi = document.querySelectorAll('.hashtag-list li button');
 const sec3HashTagArrow = document.querySelector('#sec3 .hashtag-btn');
-const sec3HashTagArrowSpan = document.querySelectorAll('#sec3 .hashtag-btn span');
+const sec3HashTagArrowSpan = document.querySelectorAll('#sec3 .hashtag-btn button');
 const sec3Slider = document.querySelector('section.mega-pick .product-slider');
 const sec3SliderLi = document.querySelectorAll('section.mega-pick .product-slider li');
 const sec3SliderLiImg = document.querySelectorAll('section.mega-pick .product-slider li img');
 const sec3SliderLiP = document.querySelectorAll('section.mega-pick .product-slider li p');
 const sec3ScrollBar = document.querySelector('#sec3 .current-scroll');
 const sec3ScrollArrow = document.querySelector('#sec3 .scroll-btn');
-const sec3ScrollArrowSpan = document.querySelectorAll('#sec3 .scroll-btn span');
+const sec3ScrollArrowSpan = document.querySelectorAll('#sec3 .scroll-btn button');
 const sec3ScrollGap = sec3SliderLi[2].offsetLeft - sec3SliderLi[0].offsetLeft;
 const mobileMore = document.querySelector('.mobile-more');
 //section5
 const sec5Slider = document.querySelector('#sec5 .slider-frame');
 const sec5SliderLabelUl = document.querySelector('#sec5 .title ul');
-const sec5SliderLabelUlLi = document.querySelectorAll('#sec5 .title ul li');
+const sec5SliderLabelUlLi = document.querySelectorAll('#sec5 .title ul li button');
 const sec5SliderLi = document.querySelectorAll('#sec5 .slider-frame li');
+const sec5SliderLiA = document.querySelectorAll('#sec5 .slider-frame li a');
 const sec5SliderLiImg = document.querySelectorAll('#sec5 .slider-frame li img');
 const sec5SliderLiP = document.querySelectorAll('#sec5 .slider-frame li p');
 const sec5ScrollGap = sec5SliderLi[1].offsetLeft - sec5SliderLi[0].offsetLeft;
 const sec5ScrollArrow = document.querySelector('#sec5 .arrows');
-const sec5ScrollArrowSpan = document.querySelectorAll('#sec5 .arrows span');
+const sec5ScrollArrowSpan = document.querySelectorAll('#sec5 .arrows button');
 const sec5ScrollBar = document.querySelector('#sec5 .current-scroll');
 // section6
 const moreBtn = document.querySelector('#sec6 .more-btn button');
 const sec6Slide = document.querySelector('#sec6 .slider-con');
 const sec6SlideUl = sec6Slide.querySelector('ul');
 const sec6SlideUlLi = sec6SlideUl.querySelectorAll('li');
+const sec6SlideUlLiA = sec6SlideUl.querySelectorAll('li a');
 const sec6Arrows = document.querySelector('#sec6 .arrow-btn');
-const sec6ArrowSpan = document.querySelectorAll('#sec6 .arrow-btn span');
+const sec6ArrowSpan = document.querySelectorAll('#sec6 .arrow-btn button');
 // section7
 const eventBox = document.querySelector('#sec7 .events-box');
 //reload responsibly
@@ -115,6 +118,15 @@ function sec1AutoGoFn(num){
   banner.style.left = bannerGoto;
   banner.style.transition = "left 0.2s ease-in-out";
 };
+function sec1TabFn(num){
+  bannerUlLiA.forEach((el, idx)=>{
+    if(idx == num){
+      el.setAttribute('tabindex', '0');
+    }else{
+      el.setAttribute('tabindex', '-1');
+    }
+  });
+}
 //sec1 - slider pager Fn
 function sec1AutoDotFn(num){
   slideDotUlLi.forEach((el, idx)=>{
@@ -151,6 +163,7 @@ function bannerSlide(){
   }
   slideCountCurrent.innerText = i;
   sec1AutoDotFn(i);
+  sec1TabFn(i);
 }
 let bannerIn = setInterval(bannerSlide, 2000);
 (()=>{bannerSlide()})();
@@ -194,6 +207,7 @@ function bannerArrowFn(e){
           };
         };
         slideCountCurrent.innerText = i;
+        sec1TabFn(i);
       };
     };
   });
@@ -249,6 +263,7 @@ slideDotUl.addEventListener('click', function(e){
     }else{
       el.classList.remove('slide-on');
     };
+    sec1TabFn(i);
   });
 });
 //sec3 - hashtag slider
@@ -424,6 +439,15 @@ sec5SliderLabelUl.addEventListener('click', function(e){
   });
 });
 //sec5 - slider
+function sec5SliderTabFn(num){
+  sec5SliderLiA.forEach((el, idx)=>{
+    if(idx>=num&&idx<=num+2){
+      el.setAttribute('tabindex', '0');
+    }else{
+      el.setAttribute('tabindex', '-1');
+    }
+  });
+}
 sec5Slider.addEventListener('mousedown', mouseScrollFn);
 sec5Slider.addEventListener('mouseleave', mouseScrollFn);
 sec5Slider.addEventListener('mouseup', mouseScrollFn);
@@ -434,11 +458,16 @@ sec5Slider.addEventListener('mousemove', function(){
 });
 sec5ScrollArrow.addEventListener('click', function(e){
   sec5ScrollArrowSpan.forEach((el, idx)=>{
+    let itemIndex;
     if(e.target == el){
       if(idx == 1){
         ScrollNextBtnFn(sec5Slider, sec5ScrollGap);
+        itemIndex = Math.floor(sec5Slider.scrollLeft / sec5ScrollGap);
+        sec5SliderTabFn(itemIndex);
       }else if(idx == 0){
         ScrollBeforeBtnFn(sec5Slider, sec5ScrollGap);
+        itemIndex = Math.floor(sec5Slider.scrollLeft / sec5ScrollGap);
+        sec5SliderTabFn(itemIndex);
       };
     };
   });
@@ -461,6 +490,16 @@ function sec6SliderFn(num){
   const goto = -gap * num + "px";
   sec6SlideUl.style.transform = `translateX(${goto})`;
 }
+function sec6SliderTabFn(num){
+  sec6SlideUlLiA.forEach((el, idx)=>{
+    if(idx == num){
+      el.setAttribute('tabindex', '0');
+    }else{
+      el.setAttribute('tabindex', '-1');
+    }
+  })
+};
+sec6SliderTabFn(0);
 let b = 0;
 sec6Arrows.addEventListener('click', function(e){
   sec6ArrowSpan.forEach((el, idx)=>{
@@ -471,12 +510,14 @@ sec6Arrows.addEventListener('click', function(e){
         b++;
         sec6SliderFn(b);
         if(b>=sec6SlideUlLi.length - 1) el.classList.add('inactive');
+        sec6SliderTabFn(b);
       }else if(idx == 1){
         el.previousElementSibling.classList.remove('inactive');
         if(b <= 0) return
         b--;
         sec6SliderFn(b);
         if(b <= 0) el.classList.add('inactive');
+        sec6SliderTabFn(b);
       };
     };
   });

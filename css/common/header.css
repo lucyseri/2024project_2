@@ -118,12 +118,18 @@ header nav .inner-nav{
 .top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(2){
   background: url("../../img/icons/icon-my.svg") no-repeat center / auto;
 }
-.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) .menu-icon{
+.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) button.menu-icon{
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
   width: 100%;
   height: inherit;
   position: relative;
 }
-.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) .menu-icon .menu-bar{
+.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) .menu-icon{
+}
+.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) button.menu-icon .menu-bar{
   display: block;
   width: 24px;
   height: 2px;
@@ -136,14 +142,14 @@ header nav .inner-nav{
   border: 0;
   transition: all 0.3s ease-in-out;
 }
-.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) .menu-icon .top{
+.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) button.menu-icon .top{
   top: 0;
 }
-.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) .menu-icon .middle{
+.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) button.menu-icon .middle{
   top: 50%;
   transform: translateY(-50%);
 }
-.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) .menu-icon .bottom{
+.top-header .inner-top-header .short-menu ul.icons_ul li:nth-child(3) button.menu-icon .bottom{
   bottom: 0;
 }
 /* bottom-header: nav */
@@ -183,13 +189,16 @@ nav .inner-nav .menu-btn{
   flex: 0 0 185px;
   height: 60px;
 }
-nav .inner-nav .menu-btn .menu-icon{
+nav .inner-nav .menu-btn button.menu-icon{
   width: 24px;
   height: 24px;
   position: relative;
   cursor: pointer;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
-nav .inner-nav .menu-btn .menu-icon span.menu-bar{
+nav .inner-nav .menu-btn button.menu-icon span.menu-bar{
   display: block;
   width: 24px;
   height: 2px;
@@ -202,14 +211,14 @@ nav .inner-nav .menu-btn .menu-icon span.menu-bar{
   color: transparent;
   transition: all 0.3s ease-in-out;
 }
-nav .inner-nav .menu-btn .menu-icon span.top{
+nav .inner-nav .menu-btn button.menu-icon span.top{
   top: 0;
 }
-nav .inner-nav .menu-btn .menu-icon span.middle{
+nav .inner-nav .menu-btn button.menu-icon span.middle{
   top: 50%;
   transform: translateY(-50%);
 }
-nav .inner-nav .menu-btn .menu-icon span.bottom{
+nav .inner-nav .menu-btn button.menu-icon span.bottom{
   bottom: 0;
 }
 .middlebar_off{

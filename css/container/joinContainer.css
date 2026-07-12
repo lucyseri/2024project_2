@@ -210,10 +210,14 @@
   background-position: right 10px center;
   background-size: 16px;
 }
+#sec1 form fieldset.user-info ul li .input-box select:focus-within{
+  outline: 2px solid #005fcc;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
 #sec1 form fieldset.user-info ul li .input-box select::-ms-expand{
   appearance: none;
 }
-
 /*responsible - tablet: 768*/
 @media only screen and (max-width: 768px) {
   #main{

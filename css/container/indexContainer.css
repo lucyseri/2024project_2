@@ -102,8 +102,9 @@ section.hero-banner .sec-con .slide-arrows{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
-section.hero-banner .sec-con .slide-arrows span{
+section.hero-banner .sec-con .slide-arrows button{
   display: block;
   width: 44px;
   height: 44px;
@@ -114,8 +115,10 @@ section.hero-banner .sec-con .slide-arrows span{
   background-repeat: no-repeat;
   box-shadow: 0 0.25rem 1.5rem 0 rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  border: 0;
+  padding: 0;
 }
-section.hero-banner .sec-con .slide-arrows .left-arrow{
+section.hero-banner .sec-con .slide-arrows button.left-arrow{
   transform: scaleX(-1);
 }
 /* section1: main banner  - mobile slide dot*/
@@ -126,6 +129,7 @@ section.hero-banner .sec-con .slide-dot{
   position: absolute;
   bottom: 16px;
   left: 0;
+  z-index: 2;
 }
 section.hero-banner .sec-con .slide-dot ul{
   display: flex;
@@ -134,9 +138,15 @@ section.hero-banner .sec-con .slide-dot ul{
 section.hero-banner .sec-con .slide-dot ul li{
   width: 10px;
   height: 10px;
+}
+section.hero-banner .sec-con .slide-dot ul li button{
+  width: 100%;
+  height: inherit;
   border-radius: 50%;
   background-color: var(--main-borderColor);
   cursor: pointer;
+  border: 0;
+  padding: 0;
 }
 .slide-on{
   background-color: var(--main-blueColor) !important;
@@ -199,13 +209,20 @@ section.mega-pick h2{
 }
 .hashtag .hashtag-box .hashtag-list ul li{
   flex: 0 0 auto;
-  padding: 0.5rem 1rem;
   border-radius: 1.3rem;
   border: 1px solid var(--main-borderColor);
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--main-blackColor);
+  padding: 0.5rem 1rem;
+}
+.hashtag .hashtag-box .hashtag-list ul li button{
+  border: 0;
+  background-color: transparent;
   cursor: pointer;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 .hashtag .hashtag-box .hashtag-btn{
   display: flex;
@@ -213,7 +230,7 @@ section.mega-pick h2{
   justify-content: right;
   gap: 10px;
 }
-.hashtag .hashtag-box .hashtag-btn span{
+.hashtag .hashtag-box .hashtag-btn button{
   display: block;
   flex: 0 0 2.2rem;
   height: 2.2rem;
@@ -222,8 +239,10 @@ section.mega-pick h2{
   background: url("../../img/icons/swiper-button.svg") no-repeat center / 18px;
   background-color: #fff;
   cursor: pointer;
+  padding: 0;
+  border: 0;
 }
-.hashtag .hashtag-box .hashtag-btn span.left-hashtag-arrow{
+.hashtag .hashtag-box .hashtag-btn button.left-hashtag-arrow{
   transform: scaleX(-1);
 }
 /* section3 - product list */
@@ -296,14 +315,17 @@ section.mega-pick .scroll{
   display: flex;
   gap: 1.2rem;
 }
-.scroll .scroll-btn span{
+.scroll .scroll-btn button{
   display: block;
   width: 1.8rem;
   height: 1.8rem;
   background: url("../../img/icons/swiper-button-line.svg") no-repeat center / 1.8rem;
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
-.scroll .scroll-btn span.left-arrow{
+.scroll .scroll-btn button.left-arrow{
   transform: scaleX(-1);
 }
 .mobile-more{
@@ -386,11 +408,14 @@ section.best .title ul{
   display: flex;
   gap: 1.4rem;
 }
-section.best .title ul li{
+section.best .title ul li button{
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.1rem;
   cursor: pointer;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 .sec5-on{
   color: var(--main-blueColor);
@@ -468,8 +493,9 @@ section.best .product-slider .arrows{
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+  z-index: 2;
 }
-section.best .product-slider .arrows span.sec5-arrow{
+section.best .product-slider .arrows button.sec5-arrow{
   display: block;
   width: 2.2rem;
   height: 2.2rem;
@@ -480,8 +506,11 @@ section.best .product-slider .arrows span.sec5-arrow{
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40% auto;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
-section.best .product-slider .arrows span.left-arrow{
+section.best .product-slider .arrows button.left-arrow{
   transform: scaleX(-1);
 }
 /* section5 - scroll */
@@ -505,20 +534,22 @@ section.mega-youtube .inner-con .title .arrow-btn{
   display: flex;
   gap: 24px;
 }
-section.mega-youtube .inner-con .title .arrow-btn span{
+section.mega-youtube .inner-con .title .arrow-btn button{
   display: block;
   width: 36px;
   height: 36px;
   background: url("../../img/icons/swiper-button-line.svg") no-repeat center;
-  font: 0 / 0 a;
   color: transparent;
   text-shadow: none;
   cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
 }
-section.mega-youtube .inner-con .title .arrow-btn span.left-arrow{
+section.mega-youtube .inner-con .title .arrow-btn button.left-arrow{
   transform: scaleX(-1);
 }
-section.mega-youtube .inner-con .title .arrow-btn span.inactive{
+section.mega-youtube .inner-con .title .arrow-btn button.inactive{
   opacity: 0.4;
 }
 section.mega-youtube .inner-con .slider-con{
