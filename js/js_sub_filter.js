@@ -1,21 +1,22 @@
 "use strict";
 // section2 - filter
 const filterSubmit = document.querySelector("#sec2 .btn-box input[type='submit']");
-const filterMoreBtn = document.querySelector("#sec2 span.more-btn");
+const filterMoreBtn = document.querySelector("#sec2 button.more-btn");
 const filterBox = document.querySelector("#sec2 .fieldset-box");
 //section3 - product info
 const listTotal = document.querySelector('.list-total strong');
 const productListLi = document.querySelectorAll('.product-list ul li');
 const pagerUl = document.querySelector('#sec3 .pager-box ul');
-const pagerUlLi = document.querySelectorAll('#sec3 .pager-box ul li');
-const bigArrowLeft = document.querySelector('#sec3 .pager-box span.big-arrow.left');
-const bigArrowRight = document.querySelector('#sec3 .pager-box span.big-arrow.right');
-const smallArrowLeft = document.querySelector('#sec3 .pager-box span.small-arrow.left');
-const smallArrowRight = document.querySelector('#sec3 .pager-box span.small-arrow.right');
+const pagerUlLi = document.querySelectorAll('#sec3 .pager-box ul li button');
+const bigArrowLeft = document.querySelector('#sec3 .pager-box button.big-arrow.left');
+const bigArrowRight = document.querySelector('#sec3 .pager-box button.big-arrow.right');
+const smallArrowLeft = document.querySelector('#sec3 .pager-box button.small-arrow.left');
+const smallArrowRight = document.querySelector('#sec3 .pager-box button.small-arrow.right');
 
 // section2 - filter
 let filterMoreTrigger = true;
 filterMoreBtn.addEventListener('click', function(e){
+  e.preventDefault();
   if(filterMoreTrigger){
     filterBox.classList.add('more-on');
     filterMoreBtn.innerText = "필터 닫기";

@@ -236,7 +236,7 @@
                   </div>
                 </div>
                 <div class="more-box">
-                  <span class="more-btn">필터 더보기</span>
+                  <button class="more-btn">필터 더보기</button>
                 </div>
               </div>
               <div class="btn-box">
@@ -258,12 +258,16 @@
             </div>
             <div class="product-array">
               <div class="input-box">
-                <input type="radio" name="array" id="new-array" value="new" checked>
-                <label for="new-array">최신순</label>
+                <label for="new-array">
+                  <input type="radio" name="array" id="new-array" value="new" checked>
+                  <span>최신순</span>
+                </label>
               </div>
               <div class="input-box">
-                <input type="radio" name="array" id="best-array" value="best">
-                <label for="best-array">인기순</label>
+                <label for="best-array">
+                  <input type="radio" name="array" id="best-array" value="best">
+                  <span>인기순</span>
+                </label>
               </div>
             </div>
           </div>
@@ -328,13 +332,13 @@
             </ul>
           </div>
           <div class="pager-box">
-            <span class="small-arrow left"></span>
-            <span class="big-arrow left"></span>
+            <button class="big-arrow left"></button>
+            <button class="small-arrow left"></button>
             <ul>
-              <li class="page-on">1</li>
+              <li><button class="page-on">1</button></li>
             </ul>
-            <span class="small-arrow"></span>
-            <span class="big-arrow"></span>
+            <button class="small-arrow right"></button>
+            <button class="big-arrow right"></button>
           </div>
         </div>
       </section>
